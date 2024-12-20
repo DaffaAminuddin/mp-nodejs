@@ -1,9 +1,8 @@
-const express = require('express');
-const authController = require('../controllers/auth');
-const router = express.Router();
-const { SitemapStream, streamToPromise } = require('sitemap');
-const { createWriteStream } = require('fs');
-
+const express = require('express')
+const authController = require('../controllers/auth')
+const router = express.Router()
+const { SitemapStream, streamToPromise } = require('sitemap')
+const { createWriteStream } = require('fs')
 
 //sitemap
 // Daftar URL untuk halaman
@@ -20,107 +19,108 @@ const pages = [
   { url: '/activation', changefreq: 'monthly', priority: 0.7 },
   { url: '/forgot-password', changefreq: 'monthly', priority: 0.7 },
   { url: '/profile', changefreq: 'monthly', priority: 0.7 },
-  { url: '/reset-password', changefreq: 'monthly', priority: 0.7 },
-];
+  { url: '/reset-password', changefreq: 'monthly', priority: 0.7 }
+]
 
 // Endpoint untuk sitemap
 router.get('/sitemap.xml', async (req, res) => {
   try {
-    const sitemap = new SitemapStream({ hostname: 'https://www.mesinpintar.com' });
-    pages.forEach((page) => sitemap.write(page));
-    sitemap.end();
+    const sitemap = new SitemapStream({
+      hostname: 'https://www.mesinpintar.com'
+    })
+    pages.forEach((page) => sitemap.write(page))
+    sitemap.end()
 
-    const sitemapXML = await streamToPromise(sitemap);
-    res.header('Content-Type', 'application/xml');
-    res.send(sitemapXML.toString());
+    const sitemapXML = await streamToPromise(sitemap)
+    res.header('Content-Type', 'application/xml')
+    res.send(sitemapXML.toString())
   } catch (error) {
-    console.error(error);
-    res.status(500).send('Unable to generate sitemap');
+    console.error(error)
+    res.status(500).send('Unable to generate sitemap')
   }
-});
+})
 
 router.get('/', authController.isLoggedIn, (req, res) => {
-    res.render('index', {
-      user: req.user
-    });
-  });
+  res.render('index', {
+    user: req.user
+  })
+})
 
 router.get('/register', authController.isLoggedIn, (req, res) => {
   res.render('register', {
     user: req.user
-  });
-});
+  })
+})
 
 router.get('/all-tools', authController.isLoggedIn, (req, res) => {
   res.render('all-tools', {
     user: req.user
-  });
-});
+  })
+})
 
 router.get('/login', authController.isLoggedIn, (req, res) => {
   res.render('login', {
     user: req.user
-  });
-});
+  })
+})
 
 router.get('/pricing', authController.isLoggedIn, (req, res) => {
   res.render('pricing', {
     user: req.user
-  });
-});
+  })
+})
 
 router.get('/profile', authController.isLoggedIn, (req, res) => {
-    console.log(req.user);
-    if( req.user ) {
-      res.render('profile', {
-        user: req.user
-      });
-    } else {
-      res.redirect('/login');
-    }
-});
+  console.log(req.user)
+  if (req.user) {
+    res.render('profile', {
+      user: req.user
+    })
+  } else {
+    res.redirect('/login')
+  }
+})
 
+router.get('/forgot-password', (req, res) => {
+  res.render('forgot-password')
+})
 
-router.get("/forgot-password",(req, res) => {
-  res.render("forgot-password");
-});
+router.get('/not-found', (req, res) => {
+  res.render('not-found')
+})
 
-router.get("/not-found",(req, res) => {
-  res.render("not-found");
-});
-
-router.get("/cv-extractor", authController.isLoggedIn, (req, res) => {
-  res.render("cv-bulk-extractor" , {
+router.get('/cv-extractor', authController.isLoggedIn, (req, res) => {
+  res.render('cv-bulk-extractor', {
     user: req.user
-  });
-});
+  })
+})
 
-router.get("/background-remover", authController.isLoggedIn, (req, res) => {
-  res.render("background-remover" , {
+router.get('/background-remover', authController.isLoggedIn, (req, res) => {
+  res.render('background-remover', {
     user: req.user
-  });
-});
+  })
+})
 
-router.get("/excel-to-json-xml", authController.isLoggedIn, (req, res) => {
-  res.render("excel-to-json-xml" , {
+router.get('/excel-to-json-xml', authController.isLoggedIn, (req, res) => {
+  res.render('excel-to-json-xml', {
     user: req.user
-  });
-});
+  })
+})
 
-router.get("/about", authController.isLoggedIn, (req, res) => {
-  res.render("about" , {
+router.get('/about', authController.isLoggedIn, (req, res) => {
+  res.render('about', {
     user: req.user
-  });
-});
+  })
+})
 
-router.get("/contact", authController.isLoggedIn, (req, res) => {
-  res.render("contact" , {
+router.get('/contact', authController.isLoggedIn, (req, res) => {
+  res.render('contact', {
     user: req.user
-  });
-});
+  })
+})
 
-router.get("/robots.txt",  (req, res) => {
-  res.render("../robots.txt");
-});
+router.get('/robots.txt', (req, res) => {
+  res.render('../robots.txt')
+})
 
-module.exports = router;
+module.exports = router

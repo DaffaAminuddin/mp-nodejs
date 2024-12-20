@@ -1,19 +1,19 @@
-const nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer')
 
 // Konfigurasi nodemailer
 const transporter = nodemailer.createTransport({
-    host: "mail.mesinpintar.com",
-    port: 465,
-    secure: true,
-    auth: {
-        user: process.env.EMAIL_ACCOUNT, // Email
-        pass: process.env.EMAIL_PASSWORD, // Password email 
-    },
-    tls: {
-        // do not fail on invalid certs
-        rejectUnauthorized: false,
-      },
-});
+  host: 'mail.mesinpintar.com',
+  port: 465,
+  secure: true,
+  auth: {
+    user: process.env.EMAIL_ACCOUNT, // Email
+    pass: process.env.EMAIL_PASSWORD // Password email
+  },
+  tls: {
+    // do not fail on invalid certs
+    rejectUnauthorized: false
+  }
+})
 
 // Mengatur transporter untuk email
 // const transporter = nodemailer.createTransport({
@@ -26,22 +26,22 @@ const transporter = nodemailer.createTransport({
 
 // verify connection configuration
 transporter.verify(function (error, success) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Server SMTP is ready to take our messages");
-    }
-});
+  if (error) {
+    console.log(error)
+  } else {
+    console.log('Server SMTP is ready to take our messages')
+  }
+})
 
 const sendVerificationEmail = (email, token) => {
-  const verificationLink = `https://www.mesinpintar.com/auth/activate/${token}`;
+  const verificationLink = `https://www.mesinpintar.com/auth/activate/${token}`
 
   const mailOptions = {
-      from: '"MesinPintar" <noreply@mesinpintar.com>',
-      to: email,
-      subject: 'Email Activation - MesinPintar',
-      text: `Please click the link below to activate your account: \n\n ${verificationLink}`,
-      html: `            
+    from: '"MesinPintar" <noreply@mesinpintar.com>',
+    to: email,
+    subject: 'Email Activation - MesinPintar',
+    text: `Please click the link below to activate your account: \n\n ${verificationLink}`,
+    html: `            
                 <!DOCTYPE html>
                         <html lang="en">
                         <head>
@@ -146,18 +146,15 @@ const sendVerificationEmail = (email, token) => {
                             </div>
                         </body>
                         </html>`
-  };
+  }
 
   transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-          console.log('Error sending email:', error);          
-      } else {
-          console.log('Verification email sent: ' + info.response);                    
-      }
-  });
-};
+    if (error) {
+      console.log('Error sending email:', error)
+    } else {
+      console.log('Verification email sent: ' + info.response)
+    }
+  })
+}
 
-
-
-
-module.exports = { sendVerificationEmail };
+module.exports = { sendVerificationEmail }

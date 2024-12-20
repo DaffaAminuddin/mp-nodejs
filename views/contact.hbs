@@ -1,155 +1,217 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Daffa Aminuddin">
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta name='author' content='Daffa Aminuddin' />
     <title>Contact</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/styles-2.css"> 
+    <link
+      href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css'
+      rel='stylesheet'
+    />
+    <link
+      href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css'
+      rel='stylesheet'
+    />
+    <link rel='stylesheet' href='/styles-2.css' />
     <style>
-        
+
     </style>
-</head>
-<body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                <img 
-                    src="https://img.mesinpintar.com/banner-new-mesinpintar.png" 
-                    alt="Mesinpintar Logo" 
-                    style="height: 40px; width: auto;"
-                >
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/all-tools">All Tools</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/cv-extractor">CV Bulk Extractor</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/excel-to-json-xml">Excel to JSON/XML</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/background-remover">Image Background Remover</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/pricing">Pricing</a></li>
-                    {{#if user }}
-                    <a class="nav-item"><a class="nav-link" href="/profile">Profile</a></a>
-                    <a class="nav-item"><a class="btn btn-outline-primary" href="/auth/logout">Logout</a></a>
-                    {{else}}                    
-                    <a class="nav-item"><a class="btn btn-outline-primary me-2 gy-3" href="/login">Login</a></a>                    
-                    <a class="nav-item"><a class="btn btn-primary me-2 gy-3" href="#signup">Register</a></a>
-                    {{/if}}                    
-                </ul>                    
-            </div>
+  </head>
+  <body>
+    <nav class='navbar fixed-top navbar-expand-lg navbar-light bg-light'>
+      <div class='container'>
+        <a class='navbar-brand' href='/'>
+          <img
+            src='https://img.mesinpintar.com/banner-new-mesinpintar.png'
+            alt='Mesinpintar Logo'
+            style='height: 40px; width: auto;'
+          />
+        </a>
+        <button
+          class='navbar-toggler'
+          type='button'
+          data-bs-toggle='collapse'
+          data-bs-target='#navbarNav'
+          aria-controls='navbarNav'
+          aria-expanded='false'
+          aria-label='Toggle navigation'
+        >
+          <span class='navbar-toggler-icon'></span>
+        </button>
+        <div class='collapse navbar-collapse' id='navbarNav'>
+          <ul class='navbar-nav ms-auto'>
+            <li class='nav-item'><a class='nav-link' href='/'>Home</a></li>
+            <li class='nav-item'><a class='nav-link' href='/all-tools'>All Tools</a></li>
+            <li class='nav-item'><a class='nav-link' href='/cv-extractor'>CV
+                Bulk Extractor</a></li>
+            <li class='nav-item'><a
+                class='nav-link'
+                href='/excel-to-json-xml'
+              >Excel to JSON/XML</a></li>
+            <li class='nav-item'><a
+                class='nav-link'
+                href='/background-remover'
+              >Image Background Remover</a></li>
+            <li class='nav-item'><a
+                class='nav-link'
+                href='/pricing'
+              >Pricing</a></li>
+            {{#if user}}
+              <a class='nav-item'><a
+                  class='nav-link'
+                  href='/profile'
+                >Profile</a></a>
+              <a class='nav-item'><a
+                  class='btn btn-outline-primary'
+                  href='/auth/logout'
+                >Logout</a></a>
+            {{else}}
+              <a class='nav-item'><a
+                  class='btn btn-outline-primary me-2 gy-3'
+                  href='/login'
+                >Login</a></a>
+              <a class='nav-item'><a
+                  class='btn btn-primary me-2 gy-3'
+                  href='#signup'
+                >Register</a></a>
+            {{/if}}
+          </ul>
         </div>
+      </div>
     </nav>
 
     <header>
-        <h1>Mesin Pintar</h1>
+      <h1>Mesin Pintar</h1>
     </header>
- 
-    <main class="container pt-5 mb-5">
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>We'd love to hear from you! Whether you have questions, feedback, or collaboration opportunities, feel free to reach out to us.</p>
-            <p>Email us at: <a href="mailto:contact@mesinpintar.com">contact@mesinpintar.com</a></p>
-            <p>Follow us for updates and more:</p>
-            <ul>
-                <li><a class="text-reset fw-bold toggle-link" href="https://x.com/mesinpintar">Twitter</a></li>
-                <li><a class="text-reset fw-bold toggle-link" href="https://instagram.com/mesinpintar">Instagram</a></li>
-            </ul>
-        </section>    
+
+    <main class='container pt-5 mb-5'>
+      <section id='contact'>
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you! Whether you have questions, feedback, or
+          collaboration opportunities, feel free to reach out to us.</p>
+        <p>Email us at:
+          <a
+            href='mailto:contact@mesinpintar.com'
+          >contact@mesinpintar.com</a></p>
+        <p>Follow us for updates and more:</p>
+        <ul>
+          <li><a
+              class='text-reset fw-bold toggle-link'
+              href='https://x.com/mesinpintar'
+            >Twitter</a></li>
+          <li><a
+              class='text-reset fw-bold toggle-link'
+              href='https://instagram.com/mesinpintar'
+            >Instagram</a></li>
+        </ul>
+      </section>
     </main>
 
     <!-- Footer -->
-    <footer class="text-center text-lg-start bg-body-tertiary text-muted pt-5">     
-        <section class="pt-1" style="background-color: #b6d7ff;">
-            <div class="container text-center text-md-start mt-5">
-            <!-- Grid row -->
-                <div class="row mt-3">
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <!-- Content -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="fas fa-gem me-3"></i>Mesinpintar
-                        </h6>
-                        <p>
-                            Your one-stop solution for powerful AI-driven tools designed to elevate your productivity and unleash your creativity.
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Tools
-                        </h6>
-                        <p>
-                            <a href="/cv-extractor" class="text-reset toggle-link">CV Bulk Extraction</a>
-                        </p>
-                        <p>
-                            <a href="/excel-to-json-xml" class="text-reset toggle-link">Excel to JSON/XML</a>
-                        </p>
-                        <p>
-                            <a href="/background-remover" class="text-reset toggle-link">Image Background Remover</a>
-                        </p>
-                        <p>
-                            <a href="#product" class="text-reset toggle-link">Paraphrase</a>
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Useful links
-                        </h6>
-                        <p>
-                            <a href="/pricing" class="text-reset toggle-link">Pricing</a>
-                        </p>
-                        <p>
-                            <a href="/all-tools" class="text-reset toggle-link">Products</a>
-                        </p>
-                        <p>
-                            <a href="/contact" class="text-reset toggle-link">Contact</a>
-                        </p>
-                        <p>
-                            <a href="/about" class="text-reset toggle-link">About</a>
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                        <p><i class="fas fa-home me-3"></i>Surakarta, Central Java, ID</p>
-                        <p>
-                            <i class="fas fa-envelope me-3"></i>
-                            contact@mesinpintar.com
-                        </p>
-                        <p><i class="fab fa-twitter me-3"></i> @mesinpintarX</p>
-                        <p><i class="fab fa-instagram me-3"></i> @mesinpintar.ig</p>
-                    </div>
-                    <!-- Grid column -->
-                </div>
-            
+    <footer class='text-center text-lg-start bg-body-tertiary text-muted pt-5'>
+      <section class='pt-1' style='background-color: #b6d7ff;'>
+        <div class='container text-center text-md-start mt-5'>
+          <!-- Grid row -->
+          <div class='row mt-3'>
+            <!-- Grid column -->
+            <div class='col-md-3 col-lg-4 col-xl-3 mx-auto mb-4'>
+              <!-- Content -->
+              <h6 class='text-uppercase fw-bold mb-4'>
+                <i class='fas fa-gem me-3'></i>Mesinpintar
+              </h6>
+              <p>
+                Your one-stop solution for powerful AI-driven tools designed to
+                elevate your productivity and unleash your creativity.
+              </p>
             </div>
-        </section>
-        <!-- Copyright -->
-        <div class="text-center p-4" style="background-color: #95bcff;">
-            &copy; 2024 Mesinpintar by <a class="toggle-link" href="https://www.instagram.com/daffaaminuddin/">Daffa Aminuddin</a> . All Rights Reserved.
-            <a class="text-reset fw-bold toggle-link" href="https://www.mesinpintar.com/">Mesinpintar</a>
-        </div>  
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class='col-md-2 col-lg-2 col-xl-2 mx-auto mb-4'>
+              <!-- Links -->
+              <h6 class='text-uppercase fw-bold mb-4'>
+                Tools
+              </h6>
+              <p>
+                <a href='/cv-extractor' class='text-reset toggle-link'>CV Bulk
+                  Extraction</a>
+              </p>
+              <p>
+                <a
+                  href='/excel-to-json-xml'
+                  class='text-reset toggle-link'
+                >Excel to JSON/XML</a>
+              </p>
+              <p>
+                <a
+                  href='/background-remover'
+                  class='text-reset toggle-link'
+                >Image Background Remover</a>
+              </p>
+              <p>
+                <a href='#product' class='text-reset toggle-link'>Paraphrase</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class='col-md-3 col-lg-2 col-xl-2 mx-auto mb-4'>
+              <!-- Links -->
+              <h6 class='text-uppercase fw-bold mb-4'>
+                Useful links
+              </h6>
+              <p>
+                <a href='/pricing' class='text-reset toggle-link'>Pricing</a>
+              </p>
+              <p>
+                <a href='/all-tools' class='text-reset toggle-link'>Products</a>
+              </p>
+              <p>
+                <a href='/contact' class='text-reset toggle-link'>Contact</a>
+              </p>
+              <p>
+                <a href='/about' class='text-reset toggle-link'>About</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class='col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4'>
+              <!-- Links -->
+              <h6 class='text-uppercase fw-bold mb-4'>Contact</h6>
+              <p><i class='fas fa-home me-3'></i>Surakarta, Central Java, ID</p>
+              <p>
+                <i class='fas fa-envelope me-3'></i>
+                contact@mesinpintar.com
+              </p>
+              <p><i class='fab fa-twitter me-3'></i> @mesinpintarX</p>
+              <p><i class='fab fa-instagram me-3'></i> @mesinpintar.ig</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+
+        </div>
+      </section>
+      <!-- Copyright -->
+      <div class='text-center p-4' style='background-color: #95bcff;'>
+        &copy; 2024 Mesinpintar by
+        <a
+          class='toggle-link'
+          href='https://www.instagram.com/daffaaminuddin/'
+        >Daffa Aminuddin</a>
+        . All Rights Reserved.
+        <a
+          class='text-reset fw-bold toggle-link'
+          href='https://www.mesinpintar.com/'
+        >Mesinpintar</a>
+      </div>
     </footer>
 
-<!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script
+      src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js'
+    ></script>
 
-</body>
+  </body>
 </html>
