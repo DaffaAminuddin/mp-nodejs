@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pricing</title>
+    <meta name="description" content="Join our Subscription, Enjoy all our tools no limits!">
+    <meta name="keywords" content="mesinpintar, mesinpintar price, cv resume information extraction">
+    <meta name="robots" content="index, follow">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles-2.css">
+    <style>
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: none;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+
+<body class="pt-5">    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img 
+                    src="https://img.mesinpintar.com/banner-new-mesinpintar.png" 
+                    alt="Mesinpintar Logo" 
+                    style="height: 40px; width: auto;"
+                >
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/all-tools">All Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/cv-extractor">CV Bulk Extractor</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/excel-to-json-xml">Excel to JSON/XML</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/background-remover">Image Background Remover</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/pricing">Pricing</a></li>
+                    {{#if user }}
+                    <a class="nav-item"><a class="nav-link" href="/profile">Profile</a></a>
+                    <a class="nav-item"><a class="btn btn-outline-primary" href="/auth/logout">Logout</a></a>
+                    {{else}}                    
+                    <a class="nav-item"><a class="btn btn-outline-primary me-2 gy-3" href="/login">Login</a></a>                    
+                    <a class="nav-item"><a class="btn btn-primary me-2 gy-3" href="/register">Register</a></a>
+                    {{/if}}                    
+                </ul>                    
+            </div>
+        </div>
+    </nav>
+    
+    {{!-- Pricing --}}
+    <header class="container py-3 pt-5">
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal text-body-emphasis">Pricing</h1>
+            <p class="fs-5 text-body-secondary">Choose a plan that works best for you!</p>            
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-3 mb-3 justify-content-center text-center">
+                <!-- Monthly Plan -->
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                    <div class="card-header py-3 text-bg-primary">
+                        <h4 class="my-0 fw-normal">Monthly Plan</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">$3<small class="text-body-secondary fw-light">/mo</small></h1>
+                        <p class="card-text">Billed every month. Cancel anytime.</p>
+                        <ul class="list-unstyled mt-3 mb-4">
+                        <li>Full access to features</li>
+                        <li>Free updates</li>
+                        <li>Email support</li>
+                        <li>Help center access</li>
+                        </ul>
+                        <button type="button" class="w-100 btn btn-lg btn-outline-primary">Choose Plan</button>
+                    </div>
+                    </div>
+                </div>
+                <!-- Yearly Plan -->
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                    <div class="card-header py-3 text-bg-primary border-primary">
+                        <h4 class="my-0 fw-normal">Yearly Plan</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">$1<small class="text-body-secondary fw-light">/mo</small></h1>
+                        <p class="card-text">Billed annually at $12.00.</p>
+                        <ul class="list-unstyled mt-3 mb-4">
+                        <li>Discounted pricing</li>
+                        <li>Full access to features</li>
+                        <li>Priority support</li>
+                        <li>Help center access</li>
+                        </ul>
+                        <button type="button" class="w-100 btn btn-lg btn-primary">Choose Plan</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- CTA Section -->
+    <section class="cta-section border-bottom bg-white">
+        {{#if user }}
+        <div class="container">
+            <h2>Ready to Elevate Your Workflow?</h2>
+            <p>Welcome, Use our AI tools for your creativity and productivity.</p>
+            <a href="/all-tools" class="btn btn-success btn-lg">Go to Super Tools</a>
+        </div>
+        {{else}}
+        <div class="container">
+            <h2>Ready to Elevate Your Workflow?</h2>
+            <p>Join thousands of users and transform your productivity with MesinPintar AI tools.</p>
+            <a href="/register" class="btn btn-success btn-lg">Sign Up for Free</a>
+        </div>
+        {{/if}}        
+    </section>
+
+    {{!-- footer --}}
+    <footer class="text-center text-lg-start bg-body-tertiary text-muted">     
+        <section class="pt-1" style="background-color: #b6d7ff;">
+            <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>Mesinpintar
+                        </h6>
+                        <p>
+                            Your one-stop solution for powerful AI-driven tools designed to elevate your productivity and unleash your creativity.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Tools
+                        </h6>
+                        <p>
+                            <a href="/cv-extractor" class="text-reset toggle-link">CV Bulk Extraction</a>
+                        </p>
+                        <p>
+                            <a href="/excel-to-json-xml" class="text-reset toggle-link">Excel to JSON/XML</a>
+                        </p>
+                        <p>
+                            <a href="/background-remover" class="text-reset toggle-link">Image Background Remover</a>
+                        </p>
+                        <p>
+                            <a href="#product" class="text-reset toggle-link">Paraphrase</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Useful links
+                        </h6>
+                        <p>
+                            <a href="/pricing" class="text-reset toggle-link">Pricing</a>
+                        </p>
+                        <p>
+                            <a href="/all-tools" class="text-reset toggle-link">Products</a>
+                        </p>
+                        <p>
+                            <a href="/contact" class="text-reset toggle-link">Contact</a>
+                        </p>
+                        <p>
+                            <a href="/about" class="text-reset toggle-link">About</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i>Surakarta, Central Java, ID</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            contact@mesinpintar.com
+                        </p>
+                        <p><i class="fab fa-twitter me-3"></i> @mesinpintarX</p>
+                        <p><i class="fab fa-instagram me-3"></i> @mesinpintar.ig</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+            
+            </div>
+        </section>
+    
+
+    <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: #95bcff;">
+            &copy; 2024 Mesinpintar by <a class="toggle-link" href="https://www.instagram.com/daffaaminuddin/">Daffa Aminuddin</a> . All Rights Reserved.
+            <a class="text-reset fw-bold toggle-link" href="https://www.mesinpintar.com/">Mesinpintar</a>
+        </div>  
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
