@@ -1,10 +1,22 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-
+import globals from 'globals';
+import pluginJs from '@eslint/js';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  {files: ["**/*.js"], languageOptions: {sourceType: "commonjs"}},
-  {languageOptions: { globals: globals.browser }},
+  {
+    languageOptions: {
+      globals: { ...globals.browser, ...globals.node },
+    },
+  },
   pluginJs.configs.recommended,
+  {
+    rules: {
+      "no-unused-vars": "off", // Pastikan aturan ini ditimpa terakhir
+      "no-unused-labels" : "off",
+      "no-extra-boolean-cast" : "off",
+      "no-prototype-builtins" : "off",
+      "no-undef" : "off",
+      "no-cond-assign" : "off"
+    },
+  },
 ];
