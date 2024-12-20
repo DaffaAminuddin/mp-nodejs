@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "start": "nodemon app.js",
     "format": "prettier --write .",
     "lint": "eslint . ",
