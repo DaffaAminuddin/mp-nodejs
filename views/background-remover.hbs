@@ -1,250 +1,314 @@
-<html lang='en'>
-  <head>
-    <meta charset='UTF-8' />
-    {{! <meta name="viewport" content="width=device-width, initial-scale=1.0"> }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {{!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> --}}
+    <title>Image Background Remove FREE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Image Background Remover</title>
-    <meta
-      name='viewport'
-      content='width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no'
-    />
-    <meta http-equiv='X-UA-Compatible' content='ie=edge' />
-    <title>Image Background Remover</title>
-    <meta
-      name='description'
-      content='Image Background Remover tools, Enjoy all our tools for FREE!'
-    />
-    <meta
-      name='keywords'
-      content='mesinpintar, mesinpintar tools, imange background remove, removebg'
-    />
-    <meta name='robots' content='index, follow' />
+    <meta name="description" content="FREE Image Background Remove tools, Enjoy all our tools for FREE!">
+    <meta name="keywords" content="image background remove, mesinpintar, remove background, image background edit, removebg">
+    <meta name="robots" content="index, follow">
     <!-- Bootstrap CSS -->
-    <link
-      href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css'
-      rel='stylesheet'
-    />
-    <link
-      href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css'
-      rel='stylesheet'
-    />
-    <link rel='stylesheet' href='/styles-2.css' />
-    <!-- Style CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles-2.css">    
+    <!-- Style CSS -->    
     <style>
-      body { background-color: #f8f9fa; /* Light grey background */ font-family:
-      Arial, sans-serif; } .main { background-color: white; /* White background
-      for the app */ padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px
-      rgba(0, 0, 0, 0.1); } .custum-file-upload { display: flex; align-items:
-      center; justify-content: center; flex-direction: column; padding: 80px;
-      border: 2px dashed #6c757d; border-radius: 8px; cursor: pointer;
-      margin-bottom: 100px; } .custum-file-upload:hover { background-color:
-      #e9ecef; } .custum-file-upload .icon { font-size: 2rem; color: #6c757d; }
-      .custum-file-upload .text { font-size: 1rem; color: #6c757d; } .buttons
-      button { margin: 5px; background-color: #007bff; color: white; border:
-      none; padding: 10px 20px; border-radius: 5px; cursor: pointer; } .buttons
-      button:hover { background-color: #0056b3; } .result { margin-top: 20px;
-      align-items: center; display: flex; align-items: center; justify-content:
-      center; flex-direction: column; } .result img { max-width: 100%; height:
-      auto; margin-bottom: 10px; align-items: center; } #resultImage { margin:
-      20px 0; align-items: center; }
+        body {
+            background-color: #f8f9fa; /* Light grey background */
+            font-family: Arial, sans-serif;
+        }
+        .main {
+            background-color: white; /* White background for the app */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .custum-file-upload {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 80px;
+            border: 2px dashed #6c757d;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 100px;
+        }
+        .custum-file-upload:hover {
+            background-color: #e9ecef;
+        }
+        .custum-file-upload .icon {
+            font-size: 2rem;
+            color: #6c757d;
+        }
+        .custum-file-upload .text {
+            font-size: 1rem;
+            color: #6c757d;
+        }                             
     </style>
-  </head>
-  <body>
-    <nav class='navbar fixed-top navbar-expand-lg navbar-light bg-light'>
-      <div class='container'>
-        <a class='navbar-brand' href='/'>
-          <img
-            src='https://img.mesinpintar.com/banner-new-mesinpintar.png'
-            alt='Mesinpintar Logo'
-            style='height: 40px; width: auto;'
-          />
-        </a>
-        <button
-          class='navbar-toggler'
-          type='button'
-          data-bs-toggle='collapse'
-          data-bs-target='#navbarNav'
-          aria-controls='navbarNav'
-          aria-expanded='false'
-          aria-label='Toggle navigation'
-        >
-          <span class='navbar-toggler-icon'></span>
-        </button>
-        <div class='collapse navbar-collapse' id='navbarNav'>
-          <ul class='navbar-nav ms-auto'>
-            <li class='nav-item'><a class='nav-link' href='/'>Home</a></li>
-            <li class='nav-item'><a class='nav-link' href='/all-tools'>All Tools</a></li>
-            <li class='nav-item'><a class='nav-link' href='/cv-extractor'>CV
-                Bulk Extractor</a></li>
-            <li class='nav-item'><a
-                class='nav-link'
-                href='/excel-to-json-xml'
-              >Excel to JSON/XML</a></li>
-            <li class='nav-item'><a
-                class='nav-link'
-                href='/background-remover'
-              >Image Background Remover</a></li>
-            <li class='nav-item'><a
-                class='nav-link'
-                href='/pricing'
-              >Pricing</a></li>
-            {{#if user}}
-              <a class='nav-item'><a
-                  class='nav-link'
-                  href='/profile'
-                >Profile</a></a>
-              <a class='nav-item'><a
-                  class='btn btn-outline-primary'
-                  href='/auth/logout'
-                >Logout</a></a>
-            {{else}}
-              <a class='nav-item'><a
-                  class='btn btn-outline-primary me-2 gy-3'
-                  href='/login'
-                >Login</a></a>
-              <a class='nav-item'><a
-                  class='btn btn-primary me-2 gy-3'
-                  href='/register'
-                >Register</a></a>
-            {{/if}}
-          </ul>
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img 
+                    src="https://img.mesinpintar.com/banner-new-mesinpintar.png" 
+                    alt="Mesinpintar Logo" 
+                    style="height: 40px; width: auto;"
+                >
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/all-tools">All Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/cv-extractor">CV Bulk Extractor</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/excel-to-json-xml">Excel to JSON/XML</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/background-remover">Image Background Remover</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/pricing">Pricing</a></li>
+                    {{#if user }}
+                    <a class="nav-item"><a class="nav-link" href="/profile">Profile</a></a>
+                    <a class="nav-item"><a class="btn btn-outline-primary" href="/auth/logout">Logout</a></a>
+                    {{else}}                    
+                    <a class="nav-item"><a class="btn btn-outline-primary me-2 gy-3" href="/login">Login</a></a>                    
+                    <a class="nav-item"><a class="btn btn-primary me-2 gy-3" href="/register">Register</a></a>
+                    {{/if}}                    
+                </ul>                    
+            </div>
         </div>
-      </div>
     </nav>
+    
+    <div class="main">
+        <div id="upload-container" class="container pt-5">
+            <h1 class="text-center pt-5">Image Background Remover</h1>
+            <p class="p text-center">Upload your image here.</p>
 
-    <div class='main'>
-      <div class='container pt-5'>
-        {{! <h1 class="text-center pt-5">Image Background Remover</h1> }}
-        <h1 class='text-center pt-5 mb-5 mt-5'>Sorry, This tool under
-          maintenance</h1>
-        {{! <p class="p text-center">Upload your image here.</p>
+            <!-- Upload File Input -->
             <label class="custum-file-upload" for="file">
-                    <div class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 24" width="48" height="48">
-                            <path d="M10 1C9.73478 1 9.48043 1.10536 9.29289 1.29289L3.29289 7.29289C3.10536 7.48043 3 7.73478 3 8V20C3 21.6569 4.34315 23 6 23H7C7.55228 23 8 22.5523 8 22C8 21.4477 7.55228 21 7 21H6C5.44772 21 5 20.5523 5 20V9H10C10.5523 9 11 8.55228 11 8V3H18C18.5523 3 19 3.44772 19 4V9C19 9.55228 19.4477 10 20 10C20.5523 10 21 9.55228 21 9V4C21 2.34315 19.6569 1 18 1H10ZM9 7H6.41421L9 4.41421V7ZM14 15.5C14 14.1193 15.1193 13 16.5 13C17.8807 13 19 14.1193 19 15.5V16V17H20C21.1046 17 22 17.8954 22 19C22 20.1046 21.1046 21 20 21H13C11.8954 21 11 20.1046 11 19C11 17.8954 11.8954 17 13 17H14V16V15.5ZM16.5 11C14.142 11 12.2076 12.8136 12.0156 15.122C10.2825 15.5606 9 17.1305 9 19C9 21.2091 10.7909 23 13 23H20C22.2091 23 24 21.2091 24 19C24 17.1305 22.7175 15.5606 20.9844 15.122C20.7924 12.8136 18.858 11 16.5 11Z"></path>
-                        </svg>
-                    </div>
-                <div class="text">
-                   <span>Click to upload image</span>
-                </div>
-                <input type="file" id="file" multiple hidden>
+            <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 24" width="48" height="48">
+                <path
+                    d="M10 1C9.73478 1 9.48043 1.10536 9.29289 1.29289L3.29289 7.29289C3.10536 7.48043 3 7.73478 3 8V20C3 21.6569 4.34315 23 6 23H7C7.55228 23 8 22.5523 8 22C8 21.4477 7.55228 21 7 21H6C5.44772 21 5 20.5523 5 20V9H10C10.5523 9 11 8.55228 11 8V3H18C18.5523 3 19 3.44772 19 4V9C19 9.55228 19.4477 10 20 10C20.5523 10 21 9.55228 21 9V4C21 2.34315 19.6569 1 18 1H10ZM9 7H6.41421L9 4.41421V7ZM14 15.5C14 14.1193 15.1193 13 16.5 13C17.8807 13 19 14.1193 19 15.5V16V17H20C21.1046 17 22 17.8954 22 19C22 20.1046 21.1046 21 20 21H13C11.8954 21 11 20.1046 11 19C11 17.8954 11.8954 17 13 17H14V16V15.5ZM16.5 11C14.142 11 12.2076 12.8136 12.0156 15.122C10.2825 15.5606 9 17.1305 9 19C9 21.2091 10.7909 23 13 23H20C22.2091 23 24 21.2091 24 19C24 17.1305 22.7175 15.5606 20.9844 15.122C20.7924 12.8136 18.858 11 16.5 11Z">
+                </path>
+                </svg>
+            </div>
+            <div class="text">
+                <span>Click to upload image</span>
+            </div>
+            <input type="file" id="file" hidden>
             </label>
-            <p class="removing" style="display: none;">Removing Background...</p>
-            <div class="result" style="display: none;">
-                <img id="resultImage" alt="" width="400px">                
-                <div class="buttons">
-                    <button onclick="location.reload()">Upload Again</button>
-                    <button onclick="downloadFile()">Download Image</button>
+            {{!-- cloudflare --}}
+            <div>
+                <div class="mb-3 d-flex justify-content-center">
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAAA3Ed48Q_lI1MEZ2" data-callback="turnstileCallback"></div>
                 </div>
-            </div> }}
-      </div>
+                <input type="hidden" id="cf-turnstile-response" name="cf-turnstile-response">
+            </div>
+            <!-- Loading Spinner -->
+            <div class="container d-flex justify-content-center mb-5 text-center">
+                <div id="loading-spinner" class="" style="display: none;">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Processing...</span>
+                    </div>
+                    <p>Processing your image, please wait...</p>
+                </div>
+            </div>                        
+        </div>
+        <!-- Result Section --> 
+        <div class="result pt-5" style="display: none; text-align: center;"> 
+            <img id="resultImage" class="d-block mx-lg-auto img-fluid" alt="" width="400px"> 
+            <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px;"> 
+            <button class="btn btn-outline-secondary btn-lg" onclick="location.reload()">Upload Again</button> 
+            <button class="btn btn-primary btn-lg" id="download-btn">Download Image</button> 
+        </div>
+        {{#if message }}
+        <div class="alert alert-danger mt-4 d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+            <div>{{message}}</div>
+        </div>
+        {{/if}}
+
+        {{#if message2 }}
+        <div class="alert alert-success mt-4 d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Success:">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+            </svg>
+            <div>{{message2}}</div>
+        </div>
+        {{/if}}
+
+        {{#if message3 }}
+        <div class="alert alert-danger mt-4 d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+            <div>Your account is not activated yet <a href="/auth/resend-verification-email?email={{message3}}" style="text-decoration: none;">Resend verification email</a></div>                
+            
+        </div>
+        {{/if}}
     </div>
 
-    <!-- Script JS -->
-    <script src='./script.js'></script>
-
+    {{!-- <!-- Script JS -->
+    <script src="./script.js"></script> --}}
+    
     <!-- Footer -->
-    <footer class='text-center text-lg-start bg-body-tertiary text-muted pt-5'>
-      <section class='pt-1' style='background-color: #b6d7ff;'>
-        <div class='container text-center text-md-start mt-5'>
-          <!-- Grid row -->
-          <div class='row mt-3'>
-            <!-- Grid column -->
-            <div class='col-md-3 col-lg-4 col-xl-3 mx-auto mb-4'>
-              <!-- Content -->
-              <h6 class='text-uppercase fw-bold mb-4'>
-                <i class='fas fa-gem me-3'></i>Mesinpintar
-              </h6>
-              <p>
-                Your one-stop solution for powerful AI-driven tools designed to
-                elevate your productivity and unleash your creativity.
-              </p>
+    <footer class="text-center text-lg-start bg-body-tertiary text-muted pt-5">     
+        <section class="pt-1" style="background-color: #b6d7ff;">
+            <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>Mesinpintar
+                        </h6>
+                        <p>
+                            Your one-stop solution for powerful AI-driven tools designed to elevate your productivity and unleash your creativity.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Tools
+                        </h6>
+                        <p>
+                            <a href="/cv-extractor" class="text-reset toggle-link">CV Bulk Extraction</a>
+                        </p>
+                        <p>
+                            <a href="/excel-to-json-xml" class="text-reset toggle-link">Excel to JSON/XML</a>
+                        </p>
+                        <p>
+                            <a href="/background-remover" class="text-reset toggle-link">Image Background Remover</a>
+                        </p>
+                        <p>
+                            <a href="#product" class="text-reset toggle-link">Paraphrase</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Useful links
+                        </h6>
+                        <p>
+                            <a href="/pricing" class="text-reset toggle-link">Pricing</a>
+                        </p>
+                        <p>
+                            <a href="/all-tools" class="text-reset toggle-link">Products</a>
+                        </p>
+                        <p>
+                            <a href="/contact" class="text-reset toggle-link">Contact</a>
+                        </p>
+                        <p>
+                            <a href="/about" class="text-reset toggle-link">About</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i>Surakarta, Central Java, ID</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            contact@mesinpintar.com
+                        </p>
+                        <p><i class="fab fa-twitter me-3"></i> @mesinpintarX</p>
+                        <p><i class="fab fa-instagram me-3"></i> @mesinpintar.ig</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+            
             </div>
-            <!-- Grid column -->
+        </section>
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: #95bcff;">
+            &copy; 2024 Mesinpintar by <a class="toggle-link" href="https://www.instagram.com/daffaaminuddin/">Daffa Aminuddin</a> . All Rights Reserved.
+            <a class="text-reset fw-bold toggle-link" href="https://www.mesinpintar.com/">Mesinpintar</a>
+        </div>  
+    </footer>   
 
-            <!-- Grid column -->
-            <div class='col-md-2 col-lg-2 col-xl-2 mx-auto mb-4'>
-              <!-- Links -->
-              <h6 class='text-uppercase fw-bold mb-4'>
-                Tools
-              </h6>
-              <p>
-                <a href='/cv-extractor' class='text-reset toggle-link'>CV Bulk
-                  Extraction</a>
-              </p>
-              <p>
-                <a
-                  href='/excel-to-json-xml'
-                  class='text-reset toggle-link'
-                >Excel to JSON/XML</a>
-              </p>
-              <p>
-                <a
-                  href='/background-remover'
-                  class='text-reset toggle-link'
-                >Image Background Remover</a>
-              </p>
-              <p>
-                <a href='#product' class='text-reset toggle-link'>Paraphrase</a>
-              </p>
-            </div>
-            <!-- Grid column -->
+    <script>
+        document.getElementById("file").addEventListener("change", async (event) => {
+            const file = event.target.files[0];            
+            const uploadContainer = document.getElementById("upload-container");
+            const loadingSpinner = document.getElementById("loading-spinner");
+            const resultSection = document.querySelector(".result");
+            const resultImage = document.getElementById("resultImage");            
+            
+            if (!file) {
+            alert("Please upload a valid image.");
+            return;
+            }
 
-            <!-- Grid column -->
-            <div class='col-md-3 col-lg-2 col-xl-2 mx-auto mb-4'>
-              <!-- Links -->
-              <h6 class='text-uppercase fw-bold mb-4'>
-                Useful links
-              </h6>
-              <p>
-                <a href='/pricing' class='text-reset toggle-link'>Pricing</a>
-              </p>
-              <p>
-                <a href='/all-tools' class='text-reset toggle-link'>Products</a>
-              </p>
-              <p>
-                <a href='/contact' class='text-reset toggle-link'>Contact</a>
-              </p>
-              <p>
-                <a href='/about' class='text-reset toggle-link'>About</a>
-              </p>
-            </div>
-            <!-- Grid column -->
+            // Show loading spinner
+            loadingSpinner.style.display = "block";
 
-            <!-- Grid column -->
-            <div class='col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4'>
-              <!-- Links -->
-              <h6 class='text-uppercase fw-bold mb-4'>Contact</h6>
-              <p><i class='fas fa-home me-3'></i>Surakarta, Central Java, ID</p>
-              <p>
-                <i class='fas fa-envelope me-3'></i>
-                contact@mesinpintar.com
-              </p>
-              <p><i class='fab fa-twitter me-3'></i> @mesinpintarX</p>
-              <p><i class='fab fa-instagram me-3'></i> @mesinpintar.ig</p>
-            </div>
-            <!-- Grid column -->
-          </div>
+            // Create FormData
+            const formData = new FormData();
+            formData.append("image", file);
 
-        </div>
-      </section>
-      <!-- Copyright -->
-      <div class='text-center p-4' style='background-color: #95bcff;'>
-        &copy; 2024 Mesinpintar by
-        <a
-          class='toggle-link'
-          href='https://www.instagram.com/daffaaminuddin/'
-        >Daffa Aminuddin</a>
-        . All Rights Reserved.
-        <a
-          class='text-reset fw-bold toggle-link'
-          href='https://www.mesinpintar.com/'
-        >Mesinpintar</a>
-      </div>
-    </footer>
+            try {
+            // Send file to /remove-bg
+            const response = await fetch("/api/remove-bg", {
+                method: "POST",
+                body: formData,
+            });
 
+            if (!response.ok) {
+                throw new Error("Failed to process the image. Please try again.");
+            }
+
+            // Create Blob URL for preview
+            const blob = await response.blob();
+            const blobUrl = URL.createObjectURL(blob);
+
+            // Hide spinner and display result
+            uploadContainer.style.display = "none";
+            loadingSpinner.style.display = "none";
+            resultSection.style.display = "block";            
+            resultImage.src = blobUrl;
+
+            // Handle download button
+            const downloadBtn = document.getElementById("download-btn");
+            downloadBtn.addEventListener("click", () => {
+                const a = document.createElement("a");
+                a.href = blobUrl;
+                a.download = "output.png";
+                a.click();
+            });
+            } catch (error) {
+            console.error(error);
+            alert(error.message || "An unexpected error occurred.");
+            loadingSpinner.style.display = "none";
+            }
+        });
+    </script>
+    {{!-- Scripts Cloudflare --}}
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script>
+    // Fungsi callback Turnstile untuk menyimpan token ke input hidden
+    function turnstileCallback(token) {
+        document.getElementById("cf-turnstile-response").value = token;
+        console.log("Generated CAPTCHA token:", token);
+    }
+    </script>
     <!-- Bootstrap JS -->
-    <script
-      src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js'
-    ></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>   
+</body>
 </html>

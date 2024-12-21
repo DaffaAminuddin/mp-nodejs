@@ -1,107 +1,106 @@
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: white;
-  margin: 0;
-  padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar {
-  font-size: 0.9rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 1000; /* Ensures it's above other content */
-  background-color: #007acc; /* Navbar background color */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 0.9rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it's above other content */
+    background-color: #007acc; /* Navbar background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-brand {
-  font-size: 1.2rem;
-  font-weight: bold;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .navbar-nav .nav-link {
-  color: #555;
-  margin-right: 15px;
-  transition: color 0.3s;
+    color: #555;
+    margin-right: 15px;
+    transition: color 0.3s;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #007bff;
+    color: #007bff;
 }
 
 .hero-section {
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('/images/hero-bg.jpg') center/cover no-repeat;
-  color: white;
-  text-align: center;
-  padding: 100px 40px;
-  background-image: url('./images/bg2.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/hero-bg.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 100px 40px;
+    background-image: url('./images/bg2.jpg');
 }
 
 .product-card {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: none;
-  transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    transition: transform 0.3s;
 }
 
 .product-card:hover {
-  transform: translateY(-10px);
+    transform: translateY(-10px);
 }
 
 .footer {
-  background-color: #343a40;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
 }
 
 .cta-section {
-  background-color: #f8f9fa;
-  text-align: center;
-  padding: 50px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 50px 20px;
 }
 
 .cta-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
-.auth-container2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.auth-container2 {            
+    display: flex;
+    align-items: center;
+    justify-content: center;            
 }
 .form-container {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
 }
 .toggle-link {
-  color: #007acc;
-  text-decoration: none;
+    color: #007acc;
+    text-decoration: none;
 }
-.footer-reg {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 0.9rem;
-  color: #555;
+.footer-reg{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #555;
 }
 .avatar {
-  width: 70%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    width: 70%;
+    border-bottom: 1px solid rgba(0,0,0,0.125);
 }
 .pricing-card {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: none;
-  transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    transition: transform 0.3s;
 }
 .pricing-card:hover {
-  transform: translateY(-10px);
+    transform: translateY(-10px);
 }
+
