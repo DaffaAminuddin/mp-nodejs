@@ -119,6 +119,12 @@ router.get("/contact", authController.isLoggedIn, (req, res) => {
   });
 });
 
+router.get("/acintya-dalam-hindu", authController.isLoggedIn, (req, res) => {
+  res.render("acintya" , {
+    user: req.user
+  });
+});
+
 router.get("/robots.txt",  (req, res) => {
   res.render("../robots.txt");
 });

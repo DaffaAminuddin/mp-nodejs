@@ -9,9 +9,45 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/styles-2.css"> 
-    <style>
-        
-    </style>
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+        "@type": "WebPage",
+        "@id": "https://www.mesinpintar.com/about",
+        "url": "https://www.mesinpintar.com/about",
+        "name": "About",
+        "description": "Learn more about Mesinpintar and our mission to provide free productivity tools for everyone.",
+        "isPartOf": {
+            "@id": "https://www.mesinpintar.com/#website"
+        },
+        "breadcrumb": {
+            "@id": "https://www.mesinpintar.com/about#breadcrumb"
+        },
+        "inLanguage": "en"
+        },
+        {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.mesinpintar.com/about#breadcrumb",
+        "itemListElement": [
+            {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.mesinpintar.com"
+            },
+            {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://www.mesinpintar.com/about"
+            }
+        ]
+        }
+    ]
+    }
+    </script>
 </head>
 <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
@@ -47,17 +83,23 @@
         </div>
     </nav>
 
-    <header>
-        <h1>Mesin Pintar</h1>
-    </header>
- 
-    <main class="container pt-5 mb-5">
-        <section id="about">
-            <h2>About Us</h2>
-            <p>Welcome to Mesin Pintar! We are a dedicated platform providing innovative tools and services to enhance your productivity and creativity. Our mission is to empower individuals and businesses with cutting-edge solutions tailored to meet modern-day challenges.</p>
-            <p>Founded and developed by <strong>Daffa Aminuddin</strong> in Indonesia, Mesin Pintar strives to simplify workflows, spark creativity, and help you achieve more with less effort.</p>
-        </section>    
-    </main>
+    <div class="container py-4 pt-5">
+        <div class="row justify-content-center pt-5">
+            <div class="col-md-10">
+                <div class="p-4 mb-4 bg-body-tertiary rounded-3 text-center">
+                    <div class="container-fluid py-5">
+                        <section id="about">
+                            <h1 class="display-4 fw-bold">About Us</h1>
+                            <p class="fs-4">Welcome to Mesinpintar! We are a dedicated platform providing innovative tools and services to enhance your productivity and creativity. Our mission is to empower individuals and businesses with cutting-edge solutions tailored to meet modern-day challenges.</p>
+                            <p class="fs-4">Founded and developed by <strong>Daffa Aminuddin</strong> in Indonesia, Mesinpintar strives to simplify workflows, spark creativity, and help you achieve more with less effort.</p>
+                        </section>                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-body-tertiary text-muted pt-5">     

@@ -3,6 +3,8 @@ const multer = require("multer");
 const axios = require("axios");
 const mysql = require("mysql2/promise"); // Gunakan mysql2 dengan promise
 const router = express.Router();
+const path = require("path");
+
 
 // Konfigurasi Multer untuk file upload
 const upload = multer();
@@ -15,44 +17,15 @@ const db = mysql.createPool({
     database: process.env.DATABASE,
 });
 
-// Middleware untuk verifikasi token Cloudflare Turnstile
-const verifyTurnstileToken = async (req, res, next) => {
-    const turnstileToken = req.body["cf-turnstile-response"];
-    const secretKey = process.env.TURNSTILE_SECRET_KEY;
-
-    if (!turnstileToken) {
-        return res.status(400).json({ error: "Missing CAPTCHA token." });
-    }
-
-    try {
-        const response = await axios.post(
-            "https://challenges.cloudflare.com/turnstile/v0/siteverify",
-            new URLSearchParams({
-                secret: secretKey,
-                response: turnstileToken,
-            }),
-            { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
-        );
-
-        if (!response.data.success) {
-            console.error("Turnstile verification failed:", response.data["error-codes"]);
-            return res.status(400).json({ error: "CAPTCHA verification failed." });
-        }
-
-        // Token valid, lanjutkan ke middleware berikutnya
-        next();
-    } catch (error) {
-        console.error("Error verifying CAPTCHA:", error.message);
-        return res.status(500).json({ error: "Internal server error during CAPTCHA verification." });
-    }
-};
 
 // API untuk upload file dan meneruskan ke Flask
 router.post("/upload", upload.array("files"), async (req, res) => {
     console.log("API '/api/upload' was called!");
-    
+            
     try {
         const userId = req.body.userId || null; // Nilai default jika userId tidak dikirim
+        
+                
         console.log("User ID received:", userId);
             if (!userId) {
                 console.log("No userId provided. Assuming user not logged in.");
@@ -134,6 +107,17 @@ router.post("/upload", upload.array("files"), async (req, res) => {
         console.error("Error processing upload:", error.message);
         res.status(500).json({ error: "Internal server error." });
     }
+});
+
+//api untuk mendapatkan file csv
+router.get("/download-csv", (req, res) => {
+    const filePath = path.resolve("/home/mesinpin/python-cv-extractor/resumes_data.csv"); // Path ke file CSV
+    res.download(filePath, "resumes_data.csv", (err) => {
+        if (err) {
+            console.error("Error during file download:", err);
+            res.status(500).send("Error downloading the file.");
+        }
+    });
 });
 
 module.exports = router;

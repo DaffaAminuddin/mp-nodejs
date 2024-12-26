@@ -30,29 +30,97 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Excel to JSON/XML Converter Tools",
-      "applicationCategory": "Productivity",
-      "operatingSystem": "All",
-      "description": "Convert Excel files to JSON/XML automatically in 5 seconds with just one click. Dont spend hours manually typing. Upload your excel file now! see the power.",
-      "url": "https://www.mesinpintar.com/excel-to-json-xml",
-      "image": "https://img.mesinpintar.com/excel-to-json-xml.png",
-      "logo": "https://img.mesinpintar.com/logo-rounded.png",
-      "author": {
-        "@type": "Person",
-        "name": "Daffa Aminuddin"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Mesinpintar",
-        "url": "https://www.mesinpintar.com"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "0.00",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"      
-      }
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.mesinpintar.com/#organization",
+          "name": "Mesinpintar",
+          "url": "https://www.mesinpintar.com",
+          "logo": "https://img.mesinpintar.com/logo-rounded.png",
+          "email": "contact@mesinpintar.com",
+          "description": "Mesinpintar is your go-to platform for helping your daily productivity and creativity. Enjoy all our tools for FREE!",
+          "sameAs": [
+            "https://www.facebook.com/profile.php?id=61570919368329",
+            "https://x.com/mesin_pintar"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.mesinpintar.com/#website",
+          "name": "Mesinpintar",
+          "url": "https://www.mesinpintar.com",
+          "description": "Mesinpintar is your go-to platform for helping your daily productivity and creativity. Enjoy all our tools for FREE!",
+          "publisher": {
+            "@id": "https://www.mesinpintar.com/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.mesinpintar.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.mesinpintar.com/#webpage",
+          "url": "https://www.mesinpintar.com",
+          "name": "Mesinpintar - Productivity & Creativity Tools",
+          "description": "Discover innovative productivity and creativity tools to enhance your work and creativity. Boost your workflow with MesinPintar's solutions.",
+          "inLanguage": "en",
+          "isPartOf": {
+            "@id": "https://www.mesinpintar.com/#website"
+          },
+          "about": {
+            "@id": "https://www.mesinpintar.com/#organization"
+          }
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://www.mesinpintar.com/excel-to-json-xml",
+          "name": "Excel to JSON/XML Converter Tools",
+          "applicationCategory": "Productivity",
+          "operatingSystem": "All",
+          "description": "Convert Excel files to JSON/XML automatically in 5 seconds with just one click. Don't spend hours manually typing. Upload your Excel file now and see the power.",
+          "url": "https://www.mesinpintar.com/excel-to-json-xml",
+          "image": "https://img.mesinpintar.com/excel-to-json-xml-2.png",
+          "logo": "https://img.mesinpintar.com/logo-rounded.png",
+          "author": {
+            "@type": "Person",
+            "name": "Daffa Aminuddin"
+          },
+          "publisher": {
+            "@id": "https://www.mesinpintar.com/#organization"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.mesinpintar.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Tools",
+              "item": "https://www.mesinpintar.com/all-tools"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Excel to JSON/XML Converter Tools",
+              "item": "https://www.mesinpintar.com/excel-to-json-xml"
+            }
+          ]
+        }
+      ]
     }
     </script>
   <style>
@@ -105,9 +173,12 @@
   <div class="container d-flex justify-content-center pt-5 mb-5">
     <div class="hero-container text-center w-75 pt-5">
       <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Excel to JSON/XML Converter</h1>    
-      {{#if message}}
-        <div class="alert alert-success mt-4" role="alert">
-          {{message}}
+      {{#if message2}}
+        <div class="alert alert-success mt-4 d-flex align-items-center" role="alert">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Success:">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+          </svg>
+          {{message2}}
         </div>
         <div class="mt-4">
           {{#ifEquals format "json"}}
@@ -140,6 +211,14 @@
           <button type="submit" id="convert-btn" class="btn btn-primary btn-lg mb-5">Convert</button>
         </form>
       {{/if}}
+      {{#if message }}
+      <div class="alert alert-danger mt-4 d-flex align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+              <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+          </svg>
+          <div>{{message}}</div>
+      </div>
+      {{/if}}      
       <!-- Loading Spinner -->
       <div id="loading-spinner" class="mt-3" style="display: none;">
           <div class="spinner-border text-primary" role="status">

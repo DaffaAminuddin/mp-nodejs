@@ -3,6 +3,12 @@ Disallow:/auth/
 Disallow:/api/
 Disallow:/upload
 Disallow:/not-found
+Disallow:/reset-password
+Disallow:/cdn-cgi/l/email-protection
+Disallow:/activation
+Disallow:/all-products
+Disallow:/profile
+Disallow:/acintya-dalam-hindu
 
 User-agent: Googlebot
 Disallow:

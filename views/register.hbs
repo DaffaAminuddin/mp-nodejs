@@ -15,11 +15,40 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Register",
-      "url": "https://www.mesinpintar.com/register",
-      "description": "Login to unlock your productivity and creativity with our AI-powered tools.",
-      "logo": "https://img.mesinpintar.com/logo-rounded.png"
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://www.mesinpintar.com/register",
+          "url": "https://www.mesinpintar.com/register",
+          "name": "Register",
+          "description": "Free create your Mesinpintar account to enjoy all tools for free and manage your preferences.",
+          "isPartOf": {
+            "@id": "https://www.mesinpintar.com/#website"
+          },
+          "breadcrumb": {
+            "@id": "https://www.mesinpintar.com/register#breadcrumb"
+          },
+          "inLanguage": "en"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.mesinpintar.com/register#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.mesinpintar.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Register",
+              "item": "https://www.mesinpintar.com/register"
+            }
+          ]
+        }
+      ]
     }
     </script>
 </head>

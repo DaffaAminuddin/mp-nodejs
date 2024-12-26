@@ -1,4 +1,3 @@
-const mysql = require("mysql");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { promisify } = require('util');
@@ -6,43 +5,12 @@ const Subscription = require('../models/subscription');
 const User = require('../models/user');
 const knex = require('../db/knex');
 const crypto = require('crypto');
-const nodemailer = require('nodemailer');
 const moment = require('moment');
-const { sendVerificationEmail } = require('../services/emailSend');
+const { resendVerificationEmail } = require('../middleware/resendEmail');
 const axios = require("axios");
-
-// konfigurasi connection database
-const db = mysql.createConnection({
-    host: process.env.DATABASE_HOST,
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PASSWORD,
-    database: process.env.DATABASE,
-});
-
-
-// Konfigurasi nodemailer
-const transporter = nodemailer.createTransport({
-    host: "mail.mesinpintar.com",
-    port: 465,
-    secure: true,
-    auth: {
-        user: process.env.EMAIL_ACCOUNT, // Email
-        pass: process.env.EMAIL_PASSWORD, // Password email 
-    },
-    tls: {
-        // do not fail on invalid certs
-        rejectUnauthorized: false,
-      },
-});
-
-// // Konfigurasi nodemailer
-// const transporter = nodemailer.createTransport({
-//     service: 'gmail',
-//     auth: {
-//         user: process.env.GMAIL_ACCOUNT, // Email
-//         pass: process.env.GMAIL_PASSWORD, // Password email 
-//     }
-// });
+const transporter = require('../smtp')
+const db = require('../db_connection')
+const nodemailer = require('nodemailer');
 
 exports.login = async (req, res) => {
   try {
@@ -83,7 +51,7 @@ exports.login = async (req, res) => {
   
         if (!captchaResponse.data.success) {
           return res.status(400).render("login", {
-            message: "CAPTCHA verification failed2. Please try again.",
+            message: "CAPTCHA verification failed. Please try again.",
           });
         }
         } catch (error) {
@@ -422,7 +390,7 @@ exports.resendVerificationEmail = async (req, res) => {
             }
 
             // Kirim email verifikasi
-            sendVerificationEmail(email, activationToken);
+            resendVerificationEmail(email, activationToken);
 
             // res.status(200).send('Verification email sent. Please check your inbox.');
             res.status(200).render('login', {

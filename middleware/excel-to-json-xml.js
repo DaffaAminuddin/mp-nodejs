@@ -8,38 +8,6 @@ const router = express.Router();
 // Konfigurasi Multer untuk file upload
 const upload = multer(); // Tidak menyimpan file sementara di server
 
-// Middleware untuk verifikasi token Cloudflare Turnstile
-const verifyTurnstileToken = async (req, res, next) => {
-    const turnstileToken = req.body["cf-turnstile-response"];
-    const secretKey = process.env.TURNSTILE_SECRET_KEY;
-
-    if (!turnstileToken) {
-        return res.status(400).json({ error: "Missing CAPTCHA token." });
-    }
-
-    try {
-        const response = await axios.post(
-            "https://challenges.cloudflare.com/turnstile/v0/siteverify",
-            new URLSearchParams({
-                secret: secretKey,
-                response: turnstileToken,
-            }),
-            { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
-        );
-
-        if (!response.data.success) {
-            console.error("Turnstile verification failed:", response.data["error-codes"]);
-            return res.status(400).json({ error: "CAPTCHA verification failed." });
-        }
-
-        // Token valid, lanjutkan ke middleware berikutnya
-        next();
-    } catch (error) {
-        console.error("Error verifying CAPTCHA:", error.message);
-        return res.status(500).json({ error: "Internal server error during CAPTCHA verification." });
-    }
-};
-
 // API untuk upload file dan mengonversinya ke JSON atau XML
 router.post("/upload", upload.single("file"), async (req, res) => {
   if (!req.file) {
@@ -50,6 +18,46 @@ router.post("/upload", upload.single("file"), async (req, res) => {
   const formData = new (require("form-data"))();
   formData.append("file", req.file.buffer, req.file.originalname);
   formData.append("format", format);
+
+  let turnstileToken = req.body["cf-turnstile-response"]; // Token CAPTCHA dari frontend
+  console.log("Site Key:", process.env.TURNSTILE_SITE_KEY);
+  console.log("Secret Key:", process.env.TURNSTILE_SECRET_KEY);
+  console.log("Token Received:", turnstileToken);
+
+  if (!turnstileToken) {
+    return res.status(400).render("excel-to-json-xml", {
+      message: "CAPTCHA verification failed. Please try again.",
+    });
+  }
+  // Cek apakah token berisi dua nilai, pisahkan dan ambil hanya yang pertama
+  if (Array.isArray(turnstileToken)) {
+    turnstileToken = turnstileToken[0];
+    console.log("Using the first token:", turnstileToken);
+  }       
+
+  // Verifikasi CAPTCHA dengan Cloudflare
+  try {        
+    const captchaResponse = await axios.post(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      new URLSearchParams({
+        secret: process.env.TURNSTILE_SECRET_KEY, // Ganti dengan kunci rahasia Turnstile Anda
+        response: turnstileToken,
+      })
+    );
+    
+    console.log("CAPTCHA verification response:", captchaResponse.data);
+
+    if (!captchaResponse.data.success) {
+      return res.status(400).render("excel-to-json-xml", {
+        message: "CAPTCHA verification failed. Please try again.",
+      });
+    }
+    } catch (error) {
+        console.error("CAPTCHA verification error:", error);
+        return res.status(500).render("excel-to-json-xml", {
+        message: "An error occurred during CAPTCHA verification.",
+        });
+        }
 
   try {
     // Mengirim file ke API Flask untuk konversi
@@ -70,7 +78,7 @@ router.post("/upload", upload.single("file"), async (req, res) => {
 
     // Kirim respons ke frontend dengan informasi file yang dapat diunduh
     res.status(200).render("excel-to-json-xml", {
-      message: `File successfully converted to ${format.toUpperCase()}.`,
+      message2: `File successfully converted to ${format.toUpperCase()}.`,
       format: format,
       convertedFilePath: `/api/excel-to-json-xml/download?format=${format}`,
     });

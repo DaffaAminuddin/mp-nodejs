@@ -1,6 +1,5 @@
 const express = require("express");
 const path = require("path");
-const mysql = require("mysql");
 const dotenv = require("dotenv");
 const cookieParser = require('cookie-parser');
 const pagesRoutes = require('./routes/pages');  // Impor rute dari pages.js
@@ -9,26 +8,20 @@ const sequelize = require('./db'); // Import koneksi Sequelize
 const Token = require('./models/Token'); // Import model Token
 const authRoutes = require('./routes/auth');
 const validateToken = require('./middleware/validateToken');
-const uploadRoutes = require("./routes/upload"); // Import file upload.js
-const downloadRoutes = require("./routes/download");
-const excelToJsonXmlRoutes = require("./routes/excel-to-json-xml");
-const imageBGremoveRoutes = require("./routes/imageBGremove");
+const cvExtractorRoutes = require("./middleware/cvExtractor"); // Import file upload.js
+const excelToJsonXmlRoutes = require("./middleware/excel-to-json-xml");
+const imageBGremoveRoutes = require("./middleware/imageBGremove");
+const sendContactEmailRoutes = require("./middleware/sendContactEmail");
 const multer = require("multer");
 const hbs = require("hbs");
 const favicon = require('serve-favicon');
+const db = require('./db_connection')
 
 
 
 dotenv.config({ path: './.env'});
 
 const app = express();
-
-const db = mysql.createConnection({
-    host: process.env.DATABASE_HOST,
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PASSWORD,
-    database: process.env.DATABASE,
-});
 
 const publicDirectory = path.join(__dirname, './public')
 
@@ -50,14 +43,14 @@ app.use(authRoutes);
 
 // API TOOLS DISINI!!!!
 app.use('/api', pagesRoutes);  // Gunakan rute dengan prefix '/api'
-app.use('/api', uploadRoutes); // Semua rute di upload.js akan diakses melalui "/api"
-app.use("/api", downloadRoutes); //path api download file
+app.use('/api', cvExtractorRoutes); // Semua rute di upload.js akan diakses melalui "/api"
 
 // Gunakan rute excel-to-json-xml
 app.use("/api/excel-to-json-xml", excelToJsonXmlRoutes); // API path diubah menjadi /api/excel-to-json-xml
-// Gunakan rute excel-to-json-xml
-app.use("/api", imageBGremoveRoutes); // API path diubah menjadi /api/excel-to-json-xml
-
+// Gunakan rute removebg
+app.use("/api", imageBGremoveRoutes); // API path diubah menjadi
+// Gunakan rute sendemailcontact
+app.use('/api', sendContactEmailRoutes);
 
 // Middleware
 app.use(express.json());
@@ -80,14 +73,6 @@ hbs.registerHelper('ifEquals', function(arg1, arg2, options) {
     }
   });
 
-
-db.connect((error) => {
-    if(error){
-        console.log(error)
-    } else {
-        console.log("MySQL Connected")
-    }
-})
 //define routes
 app.use('/',require('./routes/pages'))
 app.use('/auth', require('./routes/auth'))
