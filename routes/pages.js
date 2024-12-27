@@ -16,6 +16,8 @@ const pages = [
   { url: '/all-tools', changefreq: 'daily', priority: 1.0 },
   { url: '/cv-bulk-extractor', changefreq: 'daily', priority: 1.0 },
   { url: '/excel-to-json-xml', changefreq: 'daily', priority: 1.0 },
+  { url: '/paraphrase', changefreq: 'daily', priority: 1.0 },
+  { url: '/background-remover', changefreq: 'daily', priority: 1.0 },
   { url: '/pricing', changefreq: 'daily', priority: 1.0 },
   { url: '/activation', changefreq: 'monthly', priority: 0.7 },
   { url: '/forgot-password', changefreq: 'monthly', priority: 0.7 },
@@ -121,6 +123,12 @@ router.get("/contact", authController.isLoggedIn, (req, res) => {
 
 router.get("/acintya-dalam-hindu", authController.isLoggedIn, (req, res) => {
   res.render("acintya" , {
+    user: req.user
+  });
+});
+
+router.get("/paraphrase", authController.isLoggedIn, (req, res) => {
+  res.render("paraphrase" , {
     user: req.user
   });
 });

@@ -12,6 +12,8 @@ const cvExtractorRoutes = require("./middleware/cvExtractor"); // Import file up
 const excelToJsonXmlRoutes = require("./middleware/excel-to-json-xml");
 const imageBGremoveRoutes = require("./middleware/imageBGremove");
 const sendContactEmailRoutes = require("./middleware/sendContactEmail");
+const chatAssistantRoutes = require("./middleware/chatAssistant");
+const paraphraseRoutes = require("./middleware/paraphrase");
 const multer = require("multer");
 const hbs = require("hbs");
 const favicon = require('serve-favicon');
@@ -51,6 +53,14 @@ app.use("/api/excel-to-json-xml", excelToJsonXmlRoutes); // API path diubah menj
 app.use("/api", imageBGremoveRoutes); // API path diubah menjadi
 // Gunakan rute sendemailcontact
 app.use('/api', sendContactEmailRoutes);
+// Gunakan rute chatAssistantRoutes
+app.use('/api', chatAssistantRoutes);
+// Gunakan rute paraphraseRoutes
+app.use('/api', paraphraseRoutes);
+
+
+
+
 
 // Middleware
 app.use(express.json());
