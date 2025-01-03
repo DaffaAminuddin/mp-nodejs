@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mesinpintar - Productivity & Creativity Tools</title>
-    <meta name="description" content="Mesinpintar is your go-to platform for help your daily productivity and creativity, Enjoy all our tools for FREE!">
+    <meta name="description" content="Track your expenses effortlessly by uploading receipt pictures and AI tools like bulk resume extraction and paraphrasing, Enjoy all our tools for FREE!">
     <meta name="keywords" content="mesinpintar, mesinpintar tools, cv resume information extraction">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Productivity and Creativity Tools Service – Mesinpintar">
-    <meta name="twitter:description" content="Discover innovative productivity and creativity tools to enhance your work and creativity.">
+    <meta name="twitter:title" content="Mesinpintar">
+    <meta name="twitter:description" content="Track your expenses effortlessly by uploading receipt pictures and AI tools like bulk resume extraction and paraphrasing, Enjoy all our tools for FREE!">
     <meta name="twitter:image" content="https://img.mesinpintar.com/banner-mesinpintar.png">
+    <meta name="publisher" content="Mesinpintar">
 
-    <meta property="og:title" content="Productivity and Creativity Tools Service – Mesinpintar">
-    <meta property="og:description" content="Boost your productivity and creativity with the best tools from MesinPintar. Enhance your workflow with our innovative solutions.">
+    <meta property="og:title" content="Mesinpintar">
+    <meta property="og:description" content="Track your expenses effortlessly by uploading receipt pictures and AI tools like bulk resume extraction and paraphrasing, Enjoy all our tools for FREE!">
     <meta property="og:url" content="https://www.mesinpintar.com">
     <meta property="og:image" content="https://img.mesinpintar.com/banner-mesinpintar.png">
     <meta property="og:type" content="website">    
@@ -37,7 +38,7 @@
           "url": "https://www.mesinpintar.com",
           "logo": "https://img.mesinpintar.com/logo-rounded.png",
           "email": "contact@mesinpintar.com",
-          "description": "Mesinpintar is your go-to platform for helping your daily productivity and creativity. Enjoy all our tools for FREE!",
+          "description": "Track your expenses effortlessly by uploading receipt pictures and AI tools like bulk resume extraction and paraphrasing, Enjoy all our tools for FREE!",
           "sameAs": [
             "https://www.facebook.com/profile.php?id=61570919368329",
             "https://x.com/mesin_pintar"
@@ -48,7 +49,7 @@
           "@id": "https://www.mesinpintar.com/#website",
           "name": "Mesinpintar",
           "url": "https://www.mesinpintar.com",
-          "description": "Mesinpintar is your go-to platform for helping your daily productivity and creativity. Enjoy all our tools for FREE!",
+          "description": "Track your expenses effortlessly by uploading receipt pictures and AI tools like bulk resume extraction and paraphrasing, Enjoy all our tools for FREE!",
           "publisher": {
             "@id": "https://www.mesinpintar.com/#organization"
           },
@@ -63,7 +64,7 @@
           "@id": "https://www.mesinpintar.com/#webpage",
           "url": "https://www.mesinpintar.com",
           "name": "Mesinpintar - Productivity & Creativity Tools",
-          "description": "Discover innovative productivity and creativity tools to enhance your work and creativity. Boost your workflow with MesinPintar's solutions.",
+          "description": "Track your expenses effortlessly by uploading receipt pictures and AI tools like bulk resume extraction and paraphrasing, Enjoy all our tools for FREE!",
           "inLanguage": "en",
           "isPartOf": {
             "@id": "https://www.mesinpintar.com/#website"
@@ -78,7 +79,7 @@
 </head>
 
 <body class="">    
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="/">
                 <img 
@@ -93,21 +94,50 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    <!-- Home -->
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/all-tools">All Tools</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/cv-extractor">CV Bulk Extractor</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/excel-to-json-xml">Excel to JSON/XML</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/paraphrase">Parphrase</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/background-remover">Image Background Remover</a></li>
+
+                    <!-- Dropdown for Expenses Tracking -->
+                    {{#if user}}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="expensesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Expenses Tracking
+                        </a>
+                        <ul class="dropdown-menu bg-light" aria-labelledby="expensesDropdown">
+                            <li><a class="dropdown-item" href="/expenses-tracking">Scan Your Expenses</a></li>
+                            <li><a class="dropdown-item" href="/expenses-dashboard">Go to Expenses Dashboard</a></li>
+                        </ul>
+                    </li>
+                    {{else}}
+                    <li class="nav-item"><a class="nav-link" href="/expenses-tracking">Expenses Tracking</a></li>
+                    {{/if}}
+
+                    <!-- Dropdown for Tools -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Tools
+                        </a>
+                        <ul class="dropdown-menu bg-light" aria-labelledby="toolsDropdown">
+                            <li><a class="dropdown-item" href="/cv-extractor">CV Bulk Extractor</a></li>
+                            <li><a class="dropdown-item" href="/excel-to-json-xml">Excel to JSON/XML</a></li>
+                            <li><a class="dropdown-item" href="/paraphrase">Paraphrase</a></li>
+                            <li><a class="dropdown-item" href="/background-remover">Image Background Remover</a></li>
+                            <li><a class="dropdown-item" href="/all-tools">All Tools</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Pricing -->
                     <li class="nav-item"><a class="nav-link" href="/pricing">Pricing</a></li>
-                    {{#if user }}
-                    <a class="nav-item"><a class="nav-link" href="/profile">Profile</a></a>
-                    <a class="nav-item"><a class="btn btn-outline-primary" href="/auth/logout">Logout</a></a>
-                    {{else}}                    
-                    <a class="nav-item"><a class="btn btn-outline-primary me-2 gy-3" href="/login">Login</a></a>                    
-                    <a class="nav-item"><a class="btn btn-primary me-2 gy-3" href="#signup">Register</a></a>
-                    {{/if}}                    
-                </ul>                    
+
+                    <!-- Profile and Authentication -->
+                    {{#if user}}
+                    <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-primary" href="/auth/logout">Logout</a></li>
+                    {{else}}
+                    <li class="nav-item"><a class="btn btn-outline-primary me-2 gy-3" href="/login">Login</a></li>
+                    <li class="nav-item"><a class="btn btn-primary me-2 gy-3" href="/register">Register</a></li>
+                    {{/if}}
+                </ul>
             </div>
         </div>
     </nav>
@@ -126,7 +156,7 @@
         {{else}}
         <h1 class="display-6 fw-bold text-body-emphasis pt-5">Revolutionize Your Workflow with AI-Driven Solutions</h1>
         <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">Our AI tools are designed to supercharge your creativity and streamline your productivity, whether you're crafting content, managing projects, or brainstorming ideas.</p>
+        <p class="lead mb-4">Unlock your potential with our diverse range with AI driven tools, from seamless expense tracking and paraphrasing to efficient bulk resume extraction.</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">            
             <a href="#products" class="btn btn-primary btn-lg">Get Started for Free</a>
             <a href="#signup" class="btn btn-outline-secondary btn-lg">Sign Up Now</a>            
@@ -165,7 +195,7 @@
                 <div class="row align-items-center g-lg-5 py-5">
                     <div class="col-lg-7 text-center text-lg-start">
                         <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Join the Revolution of Creativity!</h1>
-                        <p class="col-lg-10 fs-4">Transform the way you work with AI-driven solutions designed to amplify your productivity and spark creativity. Sign up now and start creating like never before!"Let me know if you'd like adjustments!</p>
+                        <p class="col-lg-10 fs-4">Transform the way you work with AI-driven solutions designed to amplify your productivity and spark creativity. Sign up now and start creating like never before!</p>
                     </div>
                     <div class="col-md-10 mx-auto col-lg-5 text-start">
                         <!-- Authentication Form -->
@@ -259,7 +289,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Paraphrase Tool</h5>
                             <p class="card-text">Effortlessly rephrase text in multiple languages for free with our Paraphrase Multilanguage tool.</p>
-                            <a href="/background-remover" class="btn btn-primary">Try now</a>
+                            <a href="/paraphrase" class="btn btn-primary">Try now</a>
                         </div>                        
                     </div>
                 </div>                
@@ -321,10 +351,10 @@
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                         <!-- Content -->
                         <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="fas fa-gem me-3"></i>Mesinpintar
+                            <i class="fas fa-paper-plane me-3"></i>Mesinpintar
                         </h6>
                         <p>
-                            Your one-stop solution for powerful AI-driven tools designed to elevate your productivity and unleash your creativity.
+                            A platform offering a diverse range with AI powered tools, from expense tracking using just your receipt to bulk resume extraction and paraphrasing.
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -336,16 +366,16 @@
                             Tools
                         </h6>
                         <p>
+                            <a href="/expenses-tracking" class="text-reset toggle-link">Expenses Tracking</a>
+                        </p>
+                        <p>
                             <a href="/cv-extractor" class="text-reset toggle-link">CV Bulk Extraction</a>
                         </p>
                         <p>
                             <a href="/excel-to-json-xml" class="text-reset toggle-link">Excel to JSON/XML</a>
-                        </p>
+                        </p>                        
                         <p>
-                            <a href="/background-remover" class="text-reset toggle-link">Image Background Remover</a>
-                        </p>
-                        <p>
-                            <a href="#product" class="text-reset toggle-link">Paraphrase</a>
+                            <a href="/paraphrase" class="text-reset toggle-link">Paraphrase</a>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -390,7 +420,7 @@
         </section>
         <!-- Copyright -->
         <div class="text-center p-4" style="background-color: #95bcff;">
-            &copy; 2024 Mesinpintar by <a class="toggle-link" href="https://www.instagram.com/daffaaminuddin/">Daffa Aminuddin</a> . All Rights Reserved.
+            &copy; 2025 Mesinpintar. All Rights Reserved.
             <a class="text-reset fw-bold toggle-link" href="https://www.mesinpintar.com/">Mesinpintar</a>
         </div>  
     </footer>

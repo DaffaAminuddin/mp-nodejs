@@ -14,6 +14,8 @@ const imageBGremoveRoutes = require("./middleware/imageBGremove");
 const sendContactEmailRoutes = require("./middleware/sendContactEmail");
 const chatAssistantRoutes = require("./middleware/chatAssistant");
 const paraphraseRoutes = require("./middleware/paraphrase");
+const expensesTrackingRoutes = require("./middleware/expansesTracking");
+const expensesDashboardRoutes = require("./middleware/expensesDashboard");
 const multer = require("multer");
 const hbs = require("hbs");
 const favicon = require('serve-favicon');
@@ -57,9 +59,10 @@ app.use('/api', sendContactEmailRoutes);
 app.use('/api', chatAssistantRoutes);
 // Gunakan rute paraphraseRoutes
 app.use('/api', paraphraseRoutes);
-
-
-
+// Gunakan rute expensesTracking
+app.use('/api', expensesTrackingRoutes);
+// Gunakan rute expensesDashboard
+app.use(expensesDashboardRoutes);
 
 
 // Middleware
@@ -74,19 +77,12 @@ sequelize.authenticate()
 
 app.set('view engine', 'hbs');
 
-// Daftarkan helper `ifEquals` di Handlebars
-hbs.registerHelper('ifEquals', function(arg1, arg2, options) {
-    if (arg1 === arg2) {
-      return options.fn(this); // Jika nilai arg1 dan arg2 sama, jalankan blok kode di dalam {{#ifEquals}}...{{/ifEquals}}
-    } else {
-      return options.inverse(this); // Jika nilai arg1 dan arg2 berbeda, jalankan blok kode di dalam {{else}} (opsional)
-    }
-  });
 
 //define routes
 app.use('/',require('./routes/pages'))
 app.use('/auth', require('./routes/auth'))
 app.use('/images', express.static(path.join(__dirname, './images')));
+
 
 // Middleware untuk menangani 404
 app.use((req, res, next) => {

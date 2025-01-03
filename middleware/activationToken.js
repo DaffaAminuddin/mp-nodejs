@@ -1,14 +1,15 @@
 const moment = require('moment');
 const Token = require('../models/Token2');
-const mysql = require("mysql");
+const db = require('../db_connection');
+// const mysql = require("mysql");
 
-// konfigurasi connection database
-const db = mysql.createConnection({
-    host: process.env.DATABASE_HOST,
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PASSWORD,
-    database: process.env.DATABASE,
-});
+// // konfigurasi connection database
+// const db = mysql.createConnection({
+//     host: process.env.DATABASE_HOST,
+//     user: process.env.DATABASE_USER,
+//     password: process.env.DATABASE_PASSWORD,
+//     database: process.env.DATABASE,
+// });
 
 const activationToken = async (req, res, next) => {
     const { token } = req.params;

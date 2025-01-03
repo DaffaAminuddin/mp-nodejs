@@ -1,0 +1,461 @@
+{
+    "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
+    "version": "1.0.0",
+    "generatedTime": 1735321984336,
+    "data": [
+        {
+            "type": "file",
+            "name": ".prettierrc",
+            "size": 107,
+            "hash": "bb4357b1a7103b497a0ffad55e8871edf105b710871432a37301af9ecf229423"
+        },
+        {
+            "type": "file",
+            "name": "app.js",
+            "size": 3549,
+            "hash": "9c29e4b3d5bda1cb5e3f2a28d48daf3cb5b3c71b2c64077e2384695ca4575669"
+        },
+        {
+            "type": "folder",
+            "name": "controllers"
+        },
+        {
+            "type": "folder",
+            "name": "db"
+        },
+        {
+            "type": "file",
+            "name": "db.js",
+            "size": 431,
+            "hash": "2488d1eb1b131b65d7a274c6cf68261838907ac4a08f25879d8f025233eae07a"
+        },
+        {
+            "type": "file",
+            "name": "db_connection.js",
+            "size": 411,
+            "hash": "79b5abd9079876abfd7094a51318fc01b79e796c74aa6e4218872435254d56c2"
+        },
+        {
+            "type": "file",
+            "name": "download-csv",
+            "size": 4333,
+            "hash": "c3c3544b7712f0fa9a8e3b27118d60cb072f718637734c392550e6b477af6107"
+        },
+        {
+            "type": "file",
+            "name": "eslint.config.mjs",
+            "size": 531,
+            "hash": "79b4567de409dd0eb074c131c6a596761bbc1d2289c620ddc7b8e1c2efe8e653"
+        },
+        {
+            "type": "file",
+            "name": "helpers.js",
+            "size": 928,
+            "hash": "85ec23f5ff59bc6f5e5b6d3d609b9edef32b0d927ed330335ce591ff076cd08c"
+        },
+        {
+            "type": "folder",
+            "name": "images"
+        },
+        {
+            "type": "file",
+            "name": "knexfile.js",
+            "size": 934,
+            "hash": "9d2e3f4d8c5e3631dbd7537545f5cc26e0c38585cf8c14590b594a0e316c4d94"
+        },
+        {
+            "type": "folder",
+            "name": "middleware"
+        },
+        {
+            "type": "folder",
+            "name": "migrations"
+        },
+        {
+            "type": "folder",
+            "name": "models"
+        },
+        {
+            "type": "file",
+            "name": "package-lock.json",
+            "size": 241076,
+            "hash": "547733822e0ccb297b7cc56bce232740ea565b919318094b9a949c96330d4139"
+        },
+        {
+            "type": "file",
+            "name": "package.json",
+            "size": 998,
+            "hash": "fad43db099b54b8e5dcaa4bfc487e3d777b3a8a302c6dcb7abedc68484d4d65a"
+        },
+        {
+            "type": "folder",
+            "name": "public"
+        },
+        {
+            "type": "folder",
+            "name": "routes"
+        },
+        {
+            "type": "file",
+            "name": "smtp.js",
+            "size": 892,
+            "hash": "573ceb43bf886c6bab77beb3da846b0be7cc5a0339250d0764ae9262e95ed0bb"
+        },
+        {
+            "type": "folder",
+            "name": "uploads"
+        },
+        {
+            "type": "folder",
+            "name": "views"
+        },
+        {
+            "type": "file",
+            "name": "controllers/auth.js",
+            "size": 30328,
+            "hash": "77b33464b93a2942b7914c1ca4e777becbbcb42fca09fa37445f6e2138a51918"
+        },
+        {
+            "type": "file",
+            "name": "db/knex.js",
+            "size": 205,
+            "hash": "98d849d99cf61f37d752b7a87a01e5ef77cbd0b32f0c8519d1acedebf46a5672"
+        },
+        {
+            "type": "file",
+            "name": "images/cv.png",
+            "size": 45142,
+            "hash": "8ef1bd4e4645794bce88005f5ebeff3e0efd9c4b824987c4cd7e99b2be0ac34c"
+        },
+        {
+            "type": "file",
+            "name": "images/imout.jpg",
+            "size": 1637554,
+            "hash": "69f4d605e1430fd03c8d6ba9576091f13aca441acc0495c3d12e0035374bc729"
+        },
+        {
+            "type": "file",
+            "name": "images/mock.png",
+            "size": 278159,
+            "hash": "aedfddaed5b5d1a9f795d80adb098d0453ae40301fd1351dc3050d155f911506"
+        },
+        {
+            "type": "file",
+            "name": "images/paraphase.png",
+            "size": 40985,
+            "hash": "324e7a4b637187689d3f3671dbc2e3a8e015e1434754396ed055387b00cbdf80"
+        },
+        {
+            "type": "file",
+            "name": "images/productmock.png",
+            "size": 139792,
+            "hash": "2115160c9716795447a97860e2842bea45a5fb111c94c0ce09a3f072db062a64"
+        },
+        {
+            "type": "file",
+            "name": "middleware/activationToken.js",
+            "size": 2932,
+            "hash": "92e5aef4fd3189028195fa64f134b30aeea99d77dc30cd1ee73aa41174bed7f9"
+        },
+        {
+            "type": "file",
+            "name": "middleware/chatAssistant.js",
+            "size": 880,
+            "hash": "26352cbda5e31b1449640119bfd3dac38e0751cf57d03fdcf5a8a89ffc757c92"
+        },
+        {
+            "type": "file",
+            "name": "middleware/cvExtractor.js",
+            "size": 4424,
+            "hash": "5801da1c602b0386ec9303475209e8482136416ab3d61011a208cfda5f392340"
+        },
+        {
+            "type": "file",
+            "name": "middleware/excel-to-json-xml.js",
+            "size": 3986,
+            "hash": "e455816765cf0b01d0eaa6f4637e0dc343fc2df84a7cb7b36c4c6ff4f8055576"
+        },
+        {
+            "type": "file",
+            "name": "middleware/imageBGremove.js",
+            "size": 2979,
+            "hash": "830b5614a9fbc1fa935415cd98ab88f4a76e0b9ed4c1a032e3a603c7e3b1f1e2"
+        },
+        {
+            "type": "file",
+            "name": "middleware/paraphrase.js",
+            "size": 1135,
+            "hash": "4b1fea972514f1ef589847d1880b7290a215a6aa56a971a1c44284bb20b137c0"
+        },
+        {
+            "type": "file",
+            "name": "middleware/resendEmail.js",
+            "size": 6170,
+            "hash": "e6428886ef23b4cf7af62375c669961124c00e39fa20aa655a1fa25f073479a5"
+        },
+        {
+            "type": "file",
+            "name": "middleware/sendContactEmail.js",
+            "size": 2990,
+            "hash": "68b5a27455f1746b9fd732e8bc152d9176b627d8f05d984de0f51a28dbb25bd7"
+        },
+        {
+            "type": "file",
+            "name": "middleware/validateToken.js",
+            "size": 2316,
+            "hash": "11153f97ffc1877cbe3676e84ad452f3809672c2fd8944f404e7ebae00df1d17"
+        },
+        {
+            "type": "file",
+            "name": "migrations/20241210205135_create_users_table.js",
+            "size": 492,
+            "hash": "98a0d2399f8edfeb5841dbb23fd173bd65bb94ec638c973cbe76d7bad29bd39c"
+        },
+        {
+            "type": "file",
+            "name": "migrations/20241210205701_create_subscriptions_table.js",
+            "size": 636,
+            "hash": "02cd2d39357c43e554be11f5fcd709393ab101bbbd19a3a922128f23ecc158e1"
+        },
+        {
+            "type": "file",
+            "name": "migrations/add_default_values_to_subscriptions.js",
+            "size": 546,
+            "hash": "300c8f2bb4871119f90974d2ea57c17ed7a95d4af2115915868a1333a9d6567c"
+        },
+        {
+            "type": "file",
+            "name": "models/Token.js",
+            "size": 616,
+            "hash": "94034a78f7e7c128c0625f81716cc740315343efcb4935d90cbb8cf35c197339"
+        },
+        {
+            "type": "file",
+            "name": "models/Token2.js",
+            "size": 616,
+            "hash": "94034a78f7e7c128c0625f81716cc740315343efcb4935d90cbb8cf35c197339"
+        },
+        {
+            "type": "file",
+            "name": "models/subscription.js",
+            "size": 328,
+            "hash": "c5a7591b343049d270622a3995c11538b759274913546da9286c8015b82413b0"
+        },
+        {
+            "type": "file",
+            "name": "models/user.js",
+            "size": 352,
+            "hash": "f01a562d8fd0dfc5c9f46808334c561568e4e8d81cb75b42b3e1047e2da08fad"
+        },
+        {
+            "type": "file",
+            "name": "public/avatar.png",
+            "size": 174010,
+            "hash": "9e82fc8fe25a9ee542e8a50c03a437a0e5ab3c66d1b64985b106a43c533eadb2"
+        },
+        {
+            "type": "file",
+            "name": "public/favicon-old.ico",
+            "size": 169565,
+            "hash": "2937f28b6ede10303e5f1fc8c20ae12649e0207f7669f75c3dec75a90fcf43ba"
+        },
+        {
+            "type": "file",
+            "name": "public/favicon.ico",
+            "size": 177584,
+            "hash": "1034633c3b3141702a6b465a31e575f1d4f1e599d04a74e747e33ce3d1fb9e17"
+        },
+        {
+            "type": "file",
+            "name": "public/googled1d0d09302114eec.html",
+            "size": 53,
+            "hash": "1a3a5fa2efae08796a7c05bef391d5af6d8aea5717a72333d4175287576f134e"
+        },
+        {
+            "type": "file",
+            "name": "public/mdb.min.css",
+            "size": 379902,
+            "hash": "d62189130519110c9ab172c7ad249ef8347d804fecf0dabbbe49dd96194aaf6f"
+        },
+        {
+            "type": "file",
+            "name": "public/mdb.umd.min.js",
+            "size": 125175,
+            "hash": "dca0f1bf34e6a06d68ae0c1f19e8ddb271ea3ed2e4ce618a15a548a27996855f"
+        },
+        {
+            "type": "file",
+            "name": "public/robots.txt",
+            "size": 698,
+            "hash": "8084f963a41cd37ba59629faca2e1b8f908004893d5fdef6d5062cc99603c543"
+        },
+        {
+            "type": "file",
+            "name": "public/script.js",
+            "size": 1592,
+            "hash": "da1f81d132ecbdad76511991d3939274a2d29cae3bb1332b644f25c77aebd661"
+        },
+        {
+            "type": "file",
+            "name": "public/script2.js",
+            "size": 2557,
+            "hash": "37d36e791b368e6aac4144211301cb11451335dd55705f544768bc28e2dcd199"
+        },
+        {
+            "type": "file",
+            "name": "public/scripts-chat.js",
+            "size": 4431,
+            "hash": "2d7be81c984576804dfbfcebeff95eacbdad6b1ef24816aabcffc134e4b702ce"
+        },
+        {
+            "type": "file",
+            "name": "public/scripts-paraphrase.js",
+            "size": 1054,
+            "hash": "1cd6478fcf14207096ec6a9b2985ecf598bf6d91bf29b473a971ca0bc5fc7227"
+        },
+        {
+            "type": "file",
+            "name": "public/style.css",
+            "size": 2178,
+            "hash": "78509a54d374aafe2a5552638c8fc0bfbdc61edeb5e52894f47967b8d128379f"
+        },
+        {
+            "type": "file",
+            "name": "public/styles-2.css",
+            "size": 6671,
+            "hash": "25b51deb43a2cbbe5e8d5d43a1dec18731c8e05b060623161e0c4225da3f608c"
+        },
+        {
+            "type": "file",
+            "name": "routes/auth.js",
+            "size": 1066,
+            "hash": "f8a2e3fd8df9e4978c8bc0d07bff5e5ac94be84fb58d24fd7af3be721d0048ca"
+        },
+        {
+            "type": "file",
+            "name": "routes/pages.js",
+            "size": 3762,
+            "hash": "1896fcf8887912ec1e7353a462a77c3bcd3550a5d35f3f7a35e413894f1fa2c1"
+        },
+        {
+            "type": "file",
+            "name": "uploads/1ef0bade35035dd427cf215115058a19",
+            "size": 356710,
+            "hash": "f3b7a4d9d976f9439d38bd92475a2b33c5706c4d77005b0facb36d178092bd7e"
+        },
+        {
+            "type": "file",
+            "name": "views/about.hbs",
+            "size": 10509,
+            "hash": "416b507960fb247a0c6d52d20ab8b18b79f7f8ff9f7f90914c113045db3a8133"
+        },
+        {
+            "type": "file",
+            "name": "views/acintya.hbs",
+            "size": 10362,
+            "hash": "609f875c6c45318d0329b005ef09c1d706c0fd220cf3881751087fc45d49a8c8"
+        },
+        {
+            "type": "file",
+            "name": "views/activation.hbs",
+            "size": 8878,
+            "hash": "0a269d051a5dd3694d1400b6c9f722cb770f6ccaa46cafbd87b0b0e2a7d1e1de"
+        },
+        {
+            "type": "file",
+            "name": "views/all-tools.hbs",
+            "size": 19649,
+            "hash": "8a749986e520fbc9f6546bf2723a162f4cfff1323bc73e29ef51ae69cf66c3ff"
+        },
+        {
+            "type": "file",
+            "name": "views/background-remover.hbs",
+            "size": 22476,
+            "hash": "a8961e03290500205df03e7a6f64cdba58d3c61ed714066fd72e4c13e829ea21"
+        },
+        {
+            "type": "file",
+            "name": "views/chat-assistant.hbs",
+            "size": 1433,
+            "hash": "57400ddb33c9efbded367d17c5bbd2b9af5ec03ba434fdfb4d7bafeeca3e55a8"
+        },
+        {
+            "type": "file",
+            "name": "views/contact.hbs",
+            "size": 12565,
+            "hash": "756d63841f0250dbff48f6b81fe522247dc696a0509eeee67fd157d28216ee64"
+        },
+        {
+            "type": "file",
+            "name": "views/cv-bulk-extractor.hbs",
+            "size": 21195,
+            "hash": "2b84d253b1ff1395e4669f4b34ee22c881652cc110ae476ac08275cfd0b04b69"
+        },
+        {
+            "type": "file",
+            "name": "views/excel-to-json-xml.hbs",
+            "size": 17802,
+            "hash": "76142048692317c23efeecf1ba62e6aeccdb0f47eedf14e51e1e608e54525060"
+        },
+        {
+            "type": "file",
+            "name": "views/forgot-password.hbs",
+            "size": 7405,
+            "hash": "7d3a916ce8c596e2560e54ff4ab4a848e9ceeeb41d94b7ff661c0b5b14cc900c"
+        },
+        {
+            "type": "file",
+            "name": "views/index.hbs",
+            "size": 23795,
+            "hash": "9a22c1604c6a616c591baa5544d7b32e66bc232e43ee3ea0a7b873f6e0f2fac0"
+        },
+        {
+            "type": "file",
+            "name": "views/login.hbs",
+            "size": 11337,
+            "hash": "1add5fd033297eaeba4c70c0f62df0e1be155ce7caa3684d44e0a4e78363307e"
+        },
+        {
+            "type": "file",
+            "name": "views/not-found.hbs",
+            "size": 5324,
+            "hash": "969403a6ab223d24a227d191c8bc75eb5327e37c45c747972aa45bd2bb2f538c"
+        },
+        {
+            "type": "file",
+            "name": "views/paraphrase.hbs",
+            "size": 15661,
+            "hash": "ead83ef1940f920b935c013e66a3b1fe8bb62ee60cdb01368c81194ef80371cb"
+        },
+        {
+            "type": "file",
+            "name": "views/pricing.hbs",
+            "size": 12119,
+            "hash": "8c03bfd79682768acbb2e57738fb4dca372c2aba95ecb556ac45f7fe7c2a6651"
+        },
+        {
+            "type": "file",
+            "name": "views/profile.hbs",
+            "size": 12588,
+            "hash": "7cf73cebfc228dde28e10eb38048158a25bdf462d40726f1a8fd6c85880a5667"
+        },
+        {
+            "type": "file",
+            "name": "views/register.hbs",
+            "size": 11359,
+            "hash": "73db88ad1eb92cf3c410f8e1b91a31e8faf118ddd8986b91901f3e625387c797"
+        },
+        {
+            "type": "file",
+            "name": "views/reset-password.hbs",
+            "size": 8641,
+            "hash": "63c41c548d6f1cd97237acdd0b252b8680a61229044bfafb845dce40c42ddfe5"
+        },
+        {
+            "type": "file",
+            "name": "views/views.zip",
+            "size": 42067,
+            "hash": "f24795841870d0f7c8fb14ecc6a7901a770b638b0fe81ebf713204406de1a786"
+        }
+    ]
+}

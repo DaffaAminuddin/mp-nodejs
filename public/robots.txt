@@ -9,6 +9,8 @@ Disallow:/activation
 Disallow:/all-products
 Disallow:/profile
 Disallow:/acintya-dalam-hindu
+Disallow:/forgot-password
+Disallow:/expenses-dashboard
 
 User-agent: Googlebot
 Disallow:

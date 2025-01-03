@@ -3,7 +3,9 @@ const authController = require('../controllers/auth');
 const router = express.Router();
 const { SitemapStream, streamToPromise } = require('sitemap');
 const { createWriteStream } = require('fs');
+const path = require("path");
 
+router.use(express.static(path.join(__dirname, 'client/build')));
 
 //sitemap
 // Daftar URL untuk halaman
@@ -11,9 +13,10 @@ const pages = [
   { url: '/', changefreq: 'daily', priority: 1.0 },
   { url: '/about', changefreq: 'monthly', priority: 0.8 },
   { url: '/contact', changefreq: 'monthly', priority: 0.7 },
-  { url: '/register', changefreq: 'monthly', priority: 0.8 },
+  { url: '/register', changefreq: 'monthly', priority: 1.0 },
   { url: '/login', changefreq: 'monthly', priority: 0.8 },
   { url: '/all-tools', changefreq: 'daily', priority: 1.0 },
+  { url: '/expenses-tracking', changefreq: 'daily', priority: 1.0 },
   { url: '/cv-bulk-extractor', changefreq: 'daily', priority: 1.0 },
   { url: '/excel-to-json-xml', changefreq: 'daily', priority: 1.0 },
   { url: '/paraphrase', changefreq: 'daily', priority: 1.0 },
@@ -23,6 +26,7 @@ const pages = [
   { url: '/forgot-password', changefreq: 'monthly', priority: 0.7 },
   { url: '/profile', changefreq: 'monthly', priority: 0.7 },
   { url: '/reset-password', changefreq: 'monthly', priority: 0.7 },
+  { url: '/expenses-dashboard', changefreq: 'monthly', priority: 0.7 },
 ];
 
 // Endpoint untuk sitemap
@@ -82,6 +86,17 @@ router.get('/profile', authController.isLoggedIn, (req, res) => {
     }
 });
 
+router.get('/expenses-dashboard', authController.isLoggedIn, (req, res) => {
+  console.log(req.user);
+  if( req.user ) {
+    res.render('expenses-dashboard', {
+      user: req.user
+    });
+  } else {
+    res.redirect('/login');
+  }
+});
+
 
 router.get("/forgot-password",(req, res) => {
   res.render("forgot-password");
@@ -132,6 +147,13 @@ router.get("/paraphrase", authController.isLoggedIn, (req, res) => {
     user: req.user
   });
 });
+
+router.get("/expenses-tracking", authController.isLoggedIn, (req, res) => {
+  res.render("expenses-tracking" , {
+    user: req.user
+  });
+});
+
 
 router.get("/robots.txt",  (req, res) => {
   res.render("../robots.txt");

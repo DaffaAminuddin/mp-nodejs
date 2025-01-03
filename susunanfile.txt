@@ -1,0 +1,21 @@
+/mp-project
+  /controllers
+    auth.js
+  /db
+  /images
+  /middleware
+    expensesDashboard.js
+  /migrations
+  /models
+  /node-modules
+  /public
+  /routes
+    pages.js
+  /uploads
+  /views
+    espenses-dashboard.hbs
+    index.hbs
+  app.js
+  db-connection.js
+  package-lock.json  
+  package.json

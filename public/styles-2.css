@@ -35,6 +35,43 @@ body {
 .navbar-nav .nav-link:hover {
     color: #007bff;
 }
+.dropdown-menu {
+    display: block;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+.nav-item.dropdown:hover .dropdown-menu {
+    max-height: 500px; /* Sesuaikan dengan tinggi dropdown Anda */
+    opacity: 1;
+}
+/* Atur navbar di mode mobile */
+@media (max-width: 768px) {
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Agar elemen rata kiri */
+        gap: 0; /* Hapus jarak antar elemen */
+    }
+
+    .nav-item {
+        margin: 0; /* Hapus margin tambahan */
+        padding: 0; /* Hapus padding tambahan */
+    }
+
+    .dropdown-menu {
+        margin: 0; /* Pastikan dropdown tidak menambah jarak */
+        padding: 0; /* Hapus padding untuk konsistensi */
+    }
+
+    .dropdown-menu a {
+        padding: 8px 16px; /* Sesuaikan padding untuk elemen dropdown */
+    }
+    .navbar .nav-item .btn {        
+        margin-top: 0.5rem; /* Tambahkan margin atas hanya di mode mobile */
+    }
+}
 .hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/hero-bg.jpg') center/cover no-repeat;
     color: white;

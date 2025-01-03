@@ -17,7 +17,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="/">
                 <img 
@@ -33,18 +33,37 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/all-tools">All Tools</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/cv-extractor">CV Bulk Extractor</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/excel-to-json-xml">Excel to JSON/XML</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/paraphrase">Parphrase</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/background-remover">Image Background Remover</a></li>
+                    {{#if user }}
+                    <li class="nav-item dropdown"></li>
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Expenses Tracking
+                            </a>
+                        <ul class="dropdown-menu bg-light" aria-labelledby="toolsDropdown"></ul>
+                            <li><a class="dropdown-item" href="/expenses-tracking">Expenses Tracking</a></li>                            
+                        </ul>                        
+                    </li>                    
+                    {{else}}
+                    <li class="nav-item"><a class="nav-link" href="/expenses-tracking">Expenses Tracking</a></li>
+                    {{/if}}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Tools
+                        </a>
+                        <ul class="dropdown-menu bg-light" aria-labelledby="toolsDropdown">
+                            <li><a class="dropdown-item" href="/cv-extractor">CV Bulk Extractor</a></li>
+                            <li><a class="dropdown-item" href="/excel-to-json-xml">Excel to JSON/XML</a></li>
+                            <li><a class="dropdown-item" href="/paraphrase">Paraphrase</a></li>
+                            <li><a class="dropdown-item" href="/background-remover">Image Background Remover</a></li>
+                            <li><a class="dropdown-item" href="/all-tools">All Tools</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="/pricing">Pricing</a></li>
                     {{#if user }}
-                    <a class="nav-item"><a class="nav-link" href="/profile">Profile</a></a>
-                    <a class="nav-item"><a class="btn btn-outline-primary" href="/auth/logout">Logout</a></a>
+                    <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-primary" href="/auth/logout">Logout</a></li>
                     {{else}}                    
-                    <a class="nav-item"><a class="btn btn-outline-primary me-2 gy-3" href="/login">Login</a></a>                    
-                    <a class="nav-item"><a class="btn btn-primary me-2 gy-3" href="#signup">Register</a></a>
+                    <li class="nav-item"><a class="btn btn-outline-primary me-2 gy-3" href="/login">Login</a></li>                    
+                    <li class="nav-item"><a class="btn btn-primary me-2 gy-3" href="/register">Register</a></li>
                     {{/if}}                    
                 </ul>                    
             </div>
@@ -99,10 +118,10 @@
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                         <!-- Content -->
                         <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="fas fa-gem me-3"></i>Mesinpintar
+                            <i class="fas fa-paper-plane me-3"></i>Mesinpintar
                         </h6>
                         <p>
-                            Your one-stop solution for powerful AI-driven tools designed to elevate your productivity and unleash your creativity.
+                            A platform offering a diverse range with AI powered tools, from expense tracking using just your receipt to bulk resume extraction and paraphrasing.
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -114,16 +133,16 @@
                             Tools
                         </h6>
                         <p>
+                            <a href="/expenses-tracking" class="text-reset toggle-link">Expenses Tracking</a>
+                        </p>
+                        <p>
                             <a href="/cv-extractor" class="text-reset toggle-link">CV Bulk Extraction</a>
                         </p>
                         <p>
                             <a href="/excel-to-json-xml" class="text-reset toggle-link">Excel to JSON/XML</a>
-                        </p>
+                        </p>                        
                         <p>
-                            <a href="/background-remover" class="text-reset toggle-link">Image Background Remover</a>
-                        </p>
-                        <p>
-                            <a href="#product" class="text-reset toggle-link">Paraphrase</a>
+                            <a href="/paraphrase" class="text-reset toggle-link">Paraphrase</a>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -168,8 +187,8 @@
         </section>
         <!-- Copyright -->
         <div class="text-center p-4" style="background-color: #95bcff;">
-            &copy; 2024 Mesinpintar by <a class="toggle-link" href="https://www.instagram.com/daffaaminuddin/">Daffa Aminuddin</a> . All Rights Reserved.
-            <a class="text-reset fw-bold toggle-link" href="https://mesinpintar.com/">Mesinpintar</a>
+            &copy; 2025 Mesinpintar. All Rights Reserved.
+            <a class="text-reset fw-bold toggle-link" href="https://www.mesinpintar.com/">Mesinpintar</a>
         </div>  
     </footer>
 

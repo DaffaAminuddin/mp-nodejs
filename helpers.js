@@ -23,9 +23,6 @@ hbs.registerHelper('remainingDays', (startDate, endDate) => {
     }
 });
 
-
-
-
 // Helper untuk format tanggal
 hbs.registerHelper('formatDate', function(date) {
     const formattedDate = moment(date).format('Do MMM YYYY'); // Format tanggal yang mudah dibaca
@@ -33,5 +30,20 @@ hbs.registerHelper('formatDate', function(date) {
   
   return `${formattedDate} (${relativeTime})`;
 });
+
+
+// Daftarkan helper `ifEquals` di Handlebars
+hbs.registerHelper('ifEquals', function(arg1, arg2, options) {
+    if (arg1 === arg2) {
+      return options.fn(this); // Jika nilai arg1 dan arg2 sama, jalankan blok kode di dalam {{#ifEquals}}...{{/ifEquals}}
+    } else {
+      return options.inverse(this); // Jika nilai arg1 dan arg2 berbeda, jalankan blok kode di dalam {{else}} (opsional)
+    }
+  });
+
+hbs.registerHelper('json', function (context) {
+    return JSON.stringify(context);  
+});
+
 
 module.exports = hbs;

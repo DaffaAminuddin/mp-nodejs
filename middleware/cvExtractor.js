@@ -93,10 +93,10 @@ router.post("/upload", upload.array("files"), async (req, res) => {
         // Kirim file ke Flask
         const formData = new (require("form-data"))(); // FormData untuk mengirim file ke Flask
         files.forEach(file => {
-            formData.append("resumes", file.buffer, file.originalname);
+            formData.append("files", file.buffer, file.originalname);
         });
 
-        const flaskResponse = await axios.post("http://api.mesinpintar.com/bulk", formData, {
+        const flaskResponse = await axios.post("http://api5.mesinpintar.com/api/extract-cv", formData, {
             headers: formData.getHeaders(),
         });
 
@@ -111,8 +111,8 @@ router.post("/upload", upload.array("files"), async (req, res) => {
 
 //api untuk mendapatkan file csv
 router.get("/download-csv", (req, res) => {
-    const filePath = path.resolve("/home/mesinpin/python-cv-extractor/resumes_data.csv"); // Path ke file CSV
-    res.download(filePath, "resumes_data.csv", (err) => {
+    const filePath = path.resolve("/home/mesinpin/python-cv-extractor-v2/extracted_cv.csv"); // Path ke file CSV
+    res.download(filePath, "extracted_cv.csv", (err) => {
         if (err) {
             console.error("Error during file download:", err);
             res.status(500).send("Error downloading the file.");
