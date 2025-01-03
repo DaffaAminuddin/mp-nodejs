@@ -1,1 +1,10 @@
-/.vs
+# Ignore specific files
+secret.txt
+.env
+.env-3
+
+# Ignore specific folders
+/node_modules
+
+# Ignore all log files
+*.log
